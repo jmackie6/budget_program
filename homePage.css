@@ -12,29 +12,29 @@ p.title
 }
 p.tableTitles1
 {
-       font-size: 15px;
+       font-size: 18px;
        font-family: courier;
        text-align: center;
        color: blue;
 }
 p.tableTitles2
 {
-       font-size: 15px;
+       font-size: 18px;
        font-family: courier;
        text-align: center;
        color: green;
 }
 p.tableTitles3
 {
-       font-size: 15px;
+       font-size: 18px;
        font-family: courier;
        text-align: center;
-       color: red;
+       color: #333333;
 }
 img
 {
-       width: 700px; 
-       height: 600px;
+       width: 500px; 
+       height: 400px;
        text-align: center;
        display:none;
 }
@@ -61,7 +61,7 @@ span
        font-size: 18px;
        font-family: courier;
        text-align: center;
-       color: blue;
+       color: red;
 }
 button
 {
