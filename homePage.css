@@ -9,6 +9,7 @@ p.title
        font-size: 45px;
        font-family: courier;
        text-align: center;
+       color: white;
 }
 p.button
 {
@@ -85,4 +86,12 @@ button:hover
        top: 0;
        right: 0;
        
+}
+div
+{
+      background-color: #4d4d4d; 
+      border: 4px solid; 
+      text-align: center; 
+      width: 1000px; 
+      margin: auto; 
 }
