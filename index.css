@@ -1,0 +1,35 @@
+body 
+{
+       background-color: #BEC4C4;
+       margin: auto;
+} 
+h1.title   
+{
+       color: white;
+       margin-left: 20px;
+}
+div
+{
+      background-color: #3366FF; 
+      border: 4px solid; 
+      text-align: center; 
+      width: 800px; 
+      margin: auto; 
+}
+a:hover
+{
+       text-decoration: none;
+       background-color: #32a4e7;
+       color: #ffffff;
+       padding: 10px;
+       width: 180px;
+       bottom: 0;
+       top: 0;
+       right: 0;
+       
+}
+a 
+{
+       color: #ffffff;
+       text-decoration: none;
+}
