@@ -6,11 +6,19 @@ body
 h1.title   
 {
        color: white;
-       margin-left: 20px;
+       margin-center: 20px;
+       text-align: center;
+       font-family: courier;
+}
+h2.title   
+{
+       color: white;
+       text-align: center;
+       font-family: courier;
 }
 div
 {
-      background-color: #3366FF; 
+      background-color: #4d4d4d; 
       border: 4px solid; 
       text-align: center; 
       width: 800px; 
@@ -18,18 +26,24 @@ div
 }
 a:hover
 {
-       text-decoration: none;
-       background-color: #32a4e7;
-       color: #ffffff;
-       padding: 10px;
-       width: 180px;
-       bottom: 0;
-       top: 0;
-       right: 0;
+      text-decoration: none;
+      background-color: #32a4e7;
+      color: #ffffff;
+      padding: 10px;
+      width: 180px;
+      bottom: 0;
+      top: 0;
+      right: 0;
        
 }
 a 
 {
        color: #ffffff;
        text-decoration: none;
+       font-family: courier;
+}
+span 
+{
+       font-size: 18px;
+       font-family: courier;
 }
