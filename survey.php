@@ -29,12 +29,12 @@ $dice=$_REQUEST['dice'];
 // $coop=$_POST['coop'];
 // $dice=$_POST['dice'];
 
-echo "<h1>$game</h1>\n";
-echo "$party\n";
-echo "$card\n";
-echo "$strategy\n";
-echo "$coop\n";
-echo "$dice\n";
+// echo "<h1>$game</h1>\n";
+// echo "$party\n";
+// echo "$card\n";
+// echo "$strategy\n";
+// echo "$coop\n";
+// echo "$dice\n";
 
 // Organizing files for JSON
 //$data = array("type" => $type , "fname" => $fname1 ,
@@ -52,7 +52,7 @@ $data = array("game" => $type, "party" => $party, "card" => $card, "strategy" =>
 ////open or read json data
 $data_results = file_get_contents('survey.txt');
 echo "$data_results";
-$tempArray = json_decode($data_results);
+$tempArray = $data_results;
 ////append additional json to json file
 //
 $tempArray[] = $data;
@@ -60,7 +60,7 @@ $tempArray[] = $data;
 //if ($type == "Duet")
 //    $tempArray[] = $duetData;
 ////Write file after re-encoding
-$jsonData = json_encode($tempArray);
+$jsonData = $tempArray;
 file_put_contents('survey.txt', $jsonData);  
 
 ?>
