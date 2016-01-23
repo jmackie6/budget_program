@@ -9,30 +9,15 @@
   	<body><br>
   		<p class="title">Game Survey Results</p>
     	<br>
-    	<table style="margin: auto">
-    		<colgroup>
-        		<col span="6" style="background-color:#A3BCC4">
-       
-      		</colgroup>
-      		<tr>
-            	<th>game</th>
-             	<th>party</th>
-             	<th>card</th>
-             	<th>strategy</th>
-             	<th>coop</th>
-             	<th>dice</th>
-      		</tr>
-		</table>
 <?php
+    	
+
 /**
  * Created by PhpStorm.
  * User: Jared
  * Date: 1/23/2016
  * Time: 12:28 PM
  */
-
-  session_start(); 
-  echo $_SESSION['game'];
 
 
  if (isset($_POST['submit'])) { 
@@ -58,39 +43,64 @@ $dice=$_REQUEST['dice'];
 
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
+?>
+<table style="margin: auto">
+    		<colgroup>
+        		<col span="6" style="background-color:#A3BCC4">
+       
+      		</colgroup>
+      		<tr>
+            	<th>game</th>
+             	<th>party</th>
+             	<th>card</th>
+             	<th>strategy</th>
+             	<th>coop</th>
+             	<th>dice</th>
+      		</tr>
+		</table>
+		<?php
 
 // $tempArray1[] = $data;
-echo "<h3>Individual Vote</h3>"."<h4>Favorite Type of Game:  </h4>"."$game"."<br>". "<h4>Favorite Type of Game:  </h4>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+//echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+echo "<br>";
+               echo "<tr>";
+                  echo "<td>"."$game"."</td>" . "                ";
+                  echo "<td>"."$party"."</td>";
+                  echo "<td>"."$card"."</td>";
+                  echo "<td>"."$strategy"."</td>";
+                  echo "<td>"."$coop"."</td>";
+                  echo "<td>"."$dice"."</td>";
+              echo "</tr>". "<br>";
 // $json = json_encode($tempArray1);
 
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
 $tempArray = json_decode($data_results);
 //echo "$tempArray";
-foreach($tempArray as $item) 
-      {
-
-              echo "<h3>Individual Vote</h3>";
-                  echo "<h4>Favorite Type of Game:  </h4>".$item->game ."<br>";
-                  echo "<h4>Favorite Party Game:  </h4>".$item->party . "<br>";
-                  echo "<h4></h4>".$item->card . "<br>";
-                  echo "<h4></h4>".$item->strategy . "<br>";
-                  echo "<h4></h4>".$item->coop . "<br>";
-                  echo "<h4></h4>".$item->dice . "<br>";
-              echo "<br>";
-      }
 // foreach($tempArray as $item) 
 //       {
 
-//               echo "<br>" . "<tr>";
-//                   echo "<td>".$item->game."</td>" . "                ";
-//                   echo "<td>".$item->party."</td>";
-//                   echo "<td>".$item->card."</td>";
-//                   echo "<td>".$item->strategy."</td>";
-//                   echo "<td>".$item->coop."</td>";
-//                   echo "<td>".$item->dice."</td>";
-//               echo "</tr>". "<br>";
+//               echo "<h3>Individual Vote</h3>";
+//                   echo $item->game ."<br>";
+//                   echo "<h4>Favorite Party Game:  </h4>".$item->party . "<br>";
+//                   echo "<h4></h4>".$item->card . "<br>";
+//                   echo "<h4></h4>".$item->strategy . "<br>";
+//                   echo "<h4></h4>".$item->coop . "<br>";
+//                   echo "<h4></h4>".$item->dice . "<br>";
+//               echo "<br>";
 //       }
+foreach($tempArray as $item) 
+      {
+      		echo "<br>";
+               echo "<tr>";
+                  echo "<td>".$item->game."</td>" . "                ";
+                  echo "<td>".$item->party."</td>";
+                  echo "<td>".$item->card."</td>";
+                  echo "<td>".$item->strategy."</td>";
+                  echo "<td>".$item->coop."</td>";
+                  echo "<td>".$item->dice."</td>";
+              echo "</tr>". "<br>";
+      }
 
 $tempArray[] = $data;
 
