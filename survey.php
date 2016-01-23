@@ -53,7 +53,13 @@ $data = array("game" => $type, "party" => $party, "card" => $card, "strategy" =>
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
 $tempArray = json_decode($data_results);
-echo "$tempArray";
+//echo "$tempArray";
+foreach($tempArray['game']['party']['card']['strategy']['coop']['dice'] as $key => $value)
+{
+   echo $value['game'];
+   echo $value['party'];
+   // etc
+}
 ////append additional json to json file
 //
 $tempArray[] = $data;
@@ -64,5 +70,5 @@ $tempArray[] = $data;
 $jsonData = json_encode($tempArray);
 
 file_put_contents('survey.txt', $jsonData);  
-echo "$jsonData";
+//echo "$jsonData";
 ?>
