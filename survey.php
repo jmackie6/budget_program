@@ -64,7 +64,7 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 // $json = json_encode($tempArray1);
 
 // file_put_contents('survey.txt', $json);
-echo "$data"
+echo "$data";
 
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
