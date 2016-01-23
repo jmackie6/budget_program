@@ -54,15 +54,15 @@ $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
 $tempArray = json_decode($data_results);
 //echo "$tempArray";
-foreach($tempArray->results as $item) 
+foreach($tempArray as $item) 
       {
               echo '<tr>';
-                  echo '<td>'.$item['game'].'</td>';
-                  echo '<td>'.$item['party'].'</td>';
-                  echo '<td>'.$item['card'].'</td>';
-                  echo '<td>'.$item['strategy'].'</td>';
-                  echo '<td>'.$item['coop'].'</td>';
-                  echo '<td>'.$item['dice'].'</td>';
+                  echo '<td>'.$item->game.'</td>';
+                  echo '<td>'.$item->party.'</td>';
+                  echo '<td>'.$item->card.'</td>';
+                  echo '<td>'.$item->strategy.'</td>';
+                  echo '<td>'.$item->coop.'</td>';
+                  echo '<td>'.$item->dice.'</td>';
               echo '</tr>';
       }
 // foreach($tempArray as $key => $value)
