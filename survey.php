@@ -73,20 +73,14 @@ $tempArray = json_decode($data_results);
 //echo "$tempArray";
 foreach($tempArray as $item) 
       {
-  				if(isset($game))
-  				{
+  				
                   echo $item->game ."<br>";
                   echo $item->party . "<br>";
                   echo $item->card . "<br>";
                   echo $item->strategy . "<br>";
                   echo $item->coop . "<br>";
                   echo $item->dice . "<br>";
-                  echo "<br>";
-              	}
-              	else
-              	{
-              		echo "";
-              	}
+                  echo "<br><br>";
       }
 // foreach($tempArray as $item) 
 //       {
