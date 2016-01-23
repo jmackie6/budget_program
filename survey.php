@@ -51,11 +51,11 @@ $dice=$_REQUEST['dice'];
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
-$tempArray[] = $data;
+// $tempArray[] = $data;
 
-$jsonData = json_encode($tempArray);
+// $jsonData = json_encode($tempArray);
 
-file_put_contents('survey.txt', $jsonData);
+// file_put_contents('survey.txt', $jsonData);
 
 
 $data_results = file_get_contents('survey.txt');
