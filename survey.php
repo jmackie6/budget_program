@@ -1,3 +1,24 @@
+<html>
+  <header>
+    	<title>Jared's Survey</title>
+    	<link rel="stylesheet" type="text/css" href="survey.css">
+    	<script src="homePage.js"></script>
+    	<script src="jquery-1.11.3.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    	</header>
+  	<body><br>
+  		<p class="title">Game Survey Results</p>
+    	<br>
+    	<table>
+      		<tr>
+            	<th>game</th>
+             	<th>party</th>
+             	<th>card</th>
+             	<th>strategy</th>
+             	<th>coop</th>
+             	<th>dice</th>
+      		</tr>
+		</table>
 <?php
 /**
  * Created by PhpStorm.
@@ -5,9 +26,6 @@
  * Date: 1/23/2016
  * Time: 12:28 PM
  */
-
-//$type = $_POST['type'];
-//First Student
 
 
 $game     = filter_input(INPUT_POST, 'game',     FILTER_SANITIZE_STRING);
@@ -24,53 +42,11 @@ $strategy=$_REQUEST['strategy'];
 $coop=$_REQUEST['coop'];
 $dice=$_REQUEST['dice'];
 
-echo"<thead>";
-echo"       <tr>";
-echo"              <th>game</th>";
-echo"              <th>party</th>";
-echo"              <th>card</th>";
-echo"              <th>strategy</th>";
-echo"              <th>coop</th>";
-echo"              <th>dice</th>";
-echo"       </tr>";
-echo" </thead>";
-// $game=$_POST['game'];
-// $party=$_POST['party'];
-// $card=$_POST['card'];
-// $strategy=$_POST['strategy'];
-// $coop=$_POST['coop'];
-// $dice=$_POST['dice'];
 
-// echo "<h1>$game</h1>\n";
-// echo "$party\n";
-// echo "$card\n";
-// echo "$strategy\n";
-// echo "$coop\n";
-// echo "$dice\n";
 
-// Organizing files for JSON
-//$data = array("type" => $type , "fname" => $fname1 ,
-//    "lname" => $lname1 , "id" => $id1 ,
-//    "skill" => $skill , "instrument" => $instrument ,
-//    "location" => $location , "room" => $room , "time" => $time);
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
-//if ($type == "Duet")
-//    $duetData = array("type" => $type , "fname" => $fname2 ,
-//        "lname" => $lname2 , "id" => $id2 , "skill" => $skill ,
-//        "instrument" => $instrument , "location" => $location ,
-//        "room" => $room , "time" => $time);
-//
-////open or read json data
 
-$tempArray[] = $data;
-//// Append if duet
-//if ($type == "Duet")
-//    $tempArray[] = $duetData;
-////Write file after re-encoding
-$jsonData = json_encode($tempArray);
-
-file_put_contents('survey.txt', $jsonData);  
 
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
@@ -88,21 +64,26 @@ foreach($tempArray as $item)
                   echo '<td>'.$item->dice.'</td>';
               echo '</tr>';
       }
+
+$tempArray[] = $data;
+
+$jsonData = json_encode($tempArray);
+
+file_put_contents('survey.txt', $jsonData);  
 // foreach($tempArray as $key => $value)
 // {
 //    echo $value['game'];
 //    echo $value['party'];
 //    // etc
 // }
-////append additional json to json file
-//
-// $tempArray[] = $data;
-// //// Append if duet
-// //if ($type == "Duet")
-// //    $tempArray[] = $duetData;
-// ////Write file after re-encoding
+
+
 // $jsonData = json_encode($tempArray);
 
 // file_put_contents('survey.txt', $jsonData);  
 //echo "$jsonData";
 ?>
+<br><br>
+
+    <body>
+<html>
