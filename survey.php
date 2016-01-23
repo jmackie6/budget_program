@@ -52,7 +52,10 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 // 		<?php
 
 // $tempArray1[] = $data;
+if(isset($game))
 echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+else
+echo "";
 // echo "<br>";
 //                echo "<tr>";
 //                   echo "<td>"."$game"."</td>" . "                ";
@@ -70,7 +73,8 @@ $tempArray = json_decode($data_results);
 //echo "$tempArray";
 foreach($tempArray as $item) 
       {
-  
+  				if(isset($game))
+  				{
                   echo $item->game ."<br>";
                   echo $item->party . "<br>";
                   echo $item->card . "<br>";
@@ -78,6 +82,11 @@ foreach($tempArray as $item)
                   echo $item->coop . "<br>";
                   echo $item->dice . "<br>";
                   echo "<br>";
+              	}
+              	else
+              	{
+              		echo "";
+              	}
       }
 // foreach($tempArray as $item) 
 //       {
