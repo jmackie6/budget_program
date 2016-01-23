@@ -60,7 +60,7 @@ $dice=$_REQUEST['dice'];
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
 // $tempArray1[] = $data;
-echo "$game"."<br>". "  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+echo "<h3>Individual Vote</h3>"."<h4>Favorite Type of Game:  </h4>"."$game"."<br>". "<h4>Favorite Type of Game:  </h4>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 // $json = json_encode($tempArray1);
 
 $data_results = file_get_contents('survey.txt');
@@ -70,7 +70,7 @@ $tempArray = json_decode($data_results);
 foreach($tempArray as $item) 
       {
 
-              echo "<h3>Individual Vote</h3><br>";
+              echo "<h3>Individual Vote</h3>";
                   echo "<h4>Favorite Type of Game:  </h4>".$item->game ."<br>";
                   echo "<h4>Favorite Party Game:  </h4>".$item->party . "<br>";
                   echo "<h4></h4>".$item->card . "<br>";
