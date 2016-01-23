@@ -54,7 +54,7 @@ $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
 $tempArray = json_decode($data_results);
 //echo "$tempArray";
-foreach($tempArray['game']['party']['card']['strategy']['coop']['dice'] as $key => $value)
+foreach($tempArray as $key => $value)
 {
    echo $value['game'];
    echo $value['party'];
