@@ -9,7 +9,11 @@
   	<body><br>
   		<p class="title">Game Survey Results</p>
     	<br>
-    	<table>
+    	<table style="margin: auto">
+    		<colgroup>
+        		<col span="6" style="background-color:#A3BCC4">
+       
+      		</colgroup>
       		<tr>
             	<th>game</th>
              	<th>party</th>
@@ -47,6 +51,12 @@ $dice=$_REQUEST['dice'];
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
+$tempArray[] = $data;
+
+$jsonData = json_encode($tempArray);
+
+file_put_contents('survey.txt', $jsonData);
+
 
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
@@ -55,14 +65,14 @@ $tempArray = json_decode($data_results);
 foreach($tempArray as $item) 
       {
 
-              echo '<tr>';
-                  echo '<td>'.$item->game.'</td>';
-                  echo '<td>'.$item->party.'</td>';
-                  echo '<td>'.$item->card.'</td>';
-                  echo '<td>'.$item->strategy.'</td>';
-                  echo '<td>'.$item->coop.'</td>';
-                  echo '<td>'.$item->dice.'</td>';
-              echo '</tr>';
+              echo "<tr>";
+                  echo "<td>".$item->game."</td>";
+                  echo "<td>".$item->party."</td>";
+                  echo "<td>".$item->card."</td>";
+                  echo "<td>".$item->strategy."</td>";
+                  echo "<td>".$item->coop."</td>";
+                  echo "<td>".$item->dice."</td>";
+              echo "</tr>". "<br>";
       }
 
 $tempArray[] = $data;
