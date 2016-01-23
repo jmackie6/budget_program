@@ -22,12 +22,12 @@ $strategy=$_REQUEST['strategy'];
 $coop=$_REQUEST['coop'];
 $dice=$_REQUEST['dice'];
 
-$game=$_POST['game'];
-$party=$_POST['party'];
-$card=$_POST['card'];
-$strategy=$_POST['strategy'];
-$coop=$_POST['coop'];
-$dice=$_POST['dice'];
+// $game=$_POST['game'];
+// $party=$_POST['party'];
+// $card=$_POST['card'];
+// $strategy=$_POST['strategy'];
+// $coop=$_POST['coop'];
+// $dice=$_POST['dice'];
 
 echo "<h1>$game</h1>\n";
 echo "$party\n";
