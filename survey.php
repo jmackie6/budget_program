@@ -35,8 +35,9 @@
   echo $_SESSION['game'];
 
 
- if (isset($_POST['Submit'])) { 
-$_session['picturenum'] = $_POST['picturenum'];
+ if (isset($_POST['submit'])) { 
+$_session['game'] = $_POST['game'];
+$_session['party'] = $_POST['party'];
 } 
 
 $game     = filter_input(INPUT_POST, 'game',     FILTER_SANITIZE_STRING);
@@ -58,12 +59,12 @@ $dice=$_REQUEST['dice'];
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
-$tempArray1[] = $data;
+// $tempArray1[] = $data;
 
-$json = json_encode($tempArray1);
+// $json = json_encode($tempArray1);
 
-file_put_contents('survey.txt', $json);
-
+// file_put_contents('survey.txt', $json);
+echo "$data"
 
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
@@ -88,6 +89,18 @@ $jsonData = json_encode($tempArray);
 
 file_put_contents('survey.txt', $jsonData);  
 
+foreach($tempArray as $item) 
+      {
+
+              echo "<tr>";
+                  echo "<td>".$item->game."</td>" . "                ";
+                  echo "<td>".$item->party."</td>";
+                  echo "<td>".$item->card."</td>";
+                  echo "<td>".$item->strategy."</td>";
+                  echo "<td>".$item->coop."</td>";
+                  echo "<td>".$item->dice."</td>";
+              echo "</tr>". "<br>";
+      }
 // $jsonData = json_encode($tempArray);
 
 // file_put_contents('survey.txt', $jsonData);  
