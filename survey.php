@@ -60,7 +60,7 @@ $dice=$_REQUEST['dice'];
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
 // $tempArray1[] = $data;
-echo "$game". "  $party". "  $card". "  $strategy". "  $coop". "  $dice" . "\n";
+echo "$game"."<br>". "  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 // $json = json_encode($tempArray1);
 
 $data_results = file_get_contents('survey.txt');
@@ -70,15 +70,27 @@ $tempArray = json_decode($data_results);
 foreach($tempArray as $item) 
       {
 
-              echo "<br>" . "<tr>";
-                  echo "<td>".$item->game."</td>" . "                ";
-                  echo "<td>".$item->party."</td>";
-                  echo "<td>".$item->card."</td>";
-                  echo "<td>".$item->strategy."</td>";
-                  echo "<td>".$item->coop."</td>";
-                  echo "<td>".$item->dice."</td>";
-              echo "</tr>". "<br>";
+              echo "<h3>Individual Vote</h3><br>";
+                  echo "<h4>Favorite Type of Game:  </h4>".$item->game ."<br>";
+                  echo "<h4>Favorite Party Game:  </h4>".$item->party . "<br>";
+                  echo "<h4></h4>".$item->card . "<br>";
+                  echo "<h4></h4>".$item->strategy . "<br>";
+                  echo "<h4></h4>".$item->coop . "<br>";
+                  echo "<h4></h4>".$item->dice . "<br>";
+              echo "<br>";
       }
+// foreach($tempArray as $item) 
+//       {
+
+//               echo "<br>" . "<tr>";
+//                   echo "<td>".$item->game."</td>" . "                ";
+//                   echo "<td>".$item->party."</td>";
+//                   echo "<td>".$item->card."</td>";
+//                   echo "<td>".$item->strategy."</td>";
+//                   echo "<td>".$item->coop."</td>";
+//                   echo "<td>".$item->dice."</td>";
+//               echo "</tr>". "<br>";
+//       }
 
 $tempArray[] = $data;
 
