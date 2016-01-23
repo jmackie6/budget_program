@@ -8,12 +8,14 @@
 
 //$type = $_POST['type'];
 //First Student
-$game     = filter_input(INPUT_POST, 'name',     FILTER_SANITIZE_STRING);
-$party    = filter_input(INPUT_POST, 'email',    FILTER_VALIDATE_EMAIL );
-$card    = filter_input(INPUT_POST, 'major',    FILTER_SANITIZE_STRING);
-$strategy  = filter_input(INPUT_POST, 'visited',  FILTER_SANITIZE_STRING);
-$coop = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
-$dice = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_STRING);
+
+
+$game     = filter_input(INPUT_POST, 'game',     FILTER_SANITIZE_STRING);
+$party    = filter_input(INPUT_POST, 'party',    FILTER_VALIDATE_EMAIL );
+$card    = filter_input(INPUT_POST, 'card',    FILTER_SANITIZE_STRING);
+$strategy  = filter_input(INPUT_POST, 'strategy',  FILTER_SANITIZE_STRING);
+$coop = filter_input(INPUT_POST, 'coop', FILTER_SANITIZE_STRING);
+$dice = filter_input(INPUT_POST, 'dice', FILTER_SANITIZE_STRING);
 
 $game=$_REQUEST['game'];
 $party=$_REQUEST['party'];
@@ -22,6 +24,16 @@ $strategy=$_REQUEST['strategy'];
 $coop=$_REQUEST['coop'];
 $dice=$_REQUEST['dice'];
 
+echo"<thead>";
+echo"       <tr>";
+echo"              <th>game</th>";
+echo"              <th>party</th>";
+echo"              <th>card</th>";
+echo"              <th>strategy</th>";
+echo"              <th>coop</th>";
+echo"              <th>dice</th>";
+echo"       </tr>";
+echo" </thead>";
 // $game=$_POST['game'];
 // $party=$_POST['party'];
 // $card=$_POST['card'];
@@ -42,7 +54,7 @@ $dice=$_REQUEST['dice'];
 //    "skill" => $skill , "instrument" => $instrument ,
 //    "location" => $location , "room" => $room , "time" => $time);
 
-$data = array("game" => $type, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
+$data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 //if ($type == "Duet")
 //    $duetData = array("type" => $type , "fname" => $fname2 ,
 //        "lname" => $lname2 , "id" => $id2 , "skill" => $skill ,
@@ -50,12 +62,23 @@ $data = array("game" => $type, "party" => $party, "card" => $card, "strategy" =>
 //        "room" => $room , "time" => $time);
 //
 ////open or read json data
+
+$tempArray[] = $data;
+//// Append if duet
+//if ($type == "Duet")
+//    $tempArray[] = $duetData;
+////Write file after re-encoding
+$jsonData = json_encode($tempArray);
+
+file_put_contents('survey.txt', $jsonData);  
+
 $data_results = file_get_contents('survey.txt');
 //echo "$data_results";
 $tempArray = json_decode($data_results);
 //echo "$tempArray";
 foreach($tempArray as $item) 
       {
+
               echo '<tr>';
                   echo '<td>'.$item->game.'</td>';
                   echo '<td>'.$item->party.'</td>';
@@ -73,13 +96,13 @@ foreach($tempArray as $item)
 // }
 ////append additional json to json file
 //
-$tempArray[] = $data;
-//// Append if duet
-//if ($type == "Duet")
-//    $tempArray[] = $duetData;
-////Write file after re-encoding
-$jsonData = json_encode($tempArray);
+// $tempArray[] = $data;
+// //// Append if duet
+// //if ($type == "Duet")
+// //    $tempArray[] = $duetData;
+// ////Write file after re-encoding
+// $jsonData = json_encode($tempArray);
 
-file_put_contents('survey.txt', $jsonData);  
+// file_put_contents('survey.txt', $jsonData);  
 //echo "$jsonData";
 ?>
