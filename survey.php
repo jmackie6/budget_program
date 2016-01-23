@@ -51,8 +51,9 @@ $data = array("game" => $type, "party" => $party, "card" => $card, "strategy" =>
 //
 ////open or read json data
 $data_results = file_get_contents('survey.txt');
-echo "$data_results";
-$tempArray = $data_results;
+//echo "$data_results";
+$tempArray = json_decode($data_results);
+echo "$tempArray";
 ////append additional json to json file
 //
 $tempArray[] = $data;
@@ -60,7 +61,8 @@ $tempArray[] = $data;
 //if ($type == "Duet")
 //    $tempArray[] = $duetData;
 ////Write file after re-encoding
-$jsonData = $tempArray;
-file_put_contents('survey.txt', $jsonData);  
+$jsonData = json_encode($tempArray);
 
+file_put_contents('survey.txt', $jsonData);  
+echo "$jsonData";
 ?>
