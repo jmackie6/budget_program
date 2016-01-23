@@ -60,7 +60,7 @@ $dice=$_REQUEST['dice'];
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
 // $tempArray1[] = $data;
-echo "$game". "  $party". "  $card". "  $strategy". "  $coop". "  $dice\n";
+echo "$game". "  $party". "  $card". "  $strategy". "  $coop". "  $dice\n\n";
 // $json = json_encode($tempArray1);
 
 $data_results = file_get_contents('survey.txt');
