@@ -78,18 +78,18 @@ $tempArray = json_decode($data_results);
 
 
 
-foreach($tempArray as $item) 
-      {
-  				  //echo "Votes: ";
+// foreach($tempArray as $item) 
+//       {
+//   				  //echo "Votes: ";
 
-                  echo "<span>$item->game</span>";
-                  echo $item->party . "  ";
-                  echo $item->card . "  ";
-                  echo $item->strategy . "  ";
-                  echo $item->coop . "  ";
-                  echo $item->dice . "  ";
-                  echo "<br><br>";
-      }
+//                   echo "<span>$item->game</span>";
+//                   echo $item->party . "  ";
+//                   echo $item->card . "  ";
+//                   echo $item->strategy . "  ";
+//                   echo $item->coop . "  ";
+//                   echo $item->dice . "  ";
+//                   echo "<br><br>";
+//       }
 // foreach($tempArray as $item) 
 //       {
 //       		echo "<br>";
@@ -112,7 +112,19 @@ file_put_contents('survey.txt', $jsonData);
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 echo "<span>$game</span>". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
 echo "<br>";
-echo $jsonData."<br>";
+
+foreach($tempArray as $item) 
+      {
+  				  //echo "Votes: ";
+
+                  echo "<span>". $item->game. "</span>";
+                  echo $item->party . "  ";
+                  echo $item->card . "  ";
+                  echo $item->strategy . "  ";
+                  echo $item->coop . "  ";
+                  echo $item->dice . "  ";
+                  echo "<br><br>";
+      }
 ?>
 		<a href= "survey.html" class="button"> 
             <p class="a">Go back To Question Page</p> 
