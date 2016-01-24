@@ -75,17 +75,17 @@ $data_results = file_get_contents('survey.txt');
 
 $tempArray = json_decode($data_results);
 
-foreach($tempArray as $item) 
-      {
-  				  echo "Votes: ";
-                  echo $item->game .", ";
-                  echo $item->party . ", ";
-                  echo $item->card . ", ";
-                  echo $item->strategy . ", ";
-                  echo $item->coop . ", ";
-                  echo $item->dice . ", ";
-                  echo "<br>";
-      }
+// foreach($tempArray as $item) 
+//       {
+//   				  echo "Votes: ";
+//                   echo $item->game .", ";
+//                   echo $item->party . ", ";
+//                   echo $item->card . ", ";
+//                   echo $item->strategy . ", ";
+//                   echo $item->coop . ", ";
+//                   echo $item->dice . ", ";
+//                   echo "<br>";
+//       }
 // foreach($tempArray as $item) 
 //       {
 //       		echo "<br>";
