@@ -79,12 +79,12 @@ $tempArray = json_decode($data_results);
 foreach($tempArray as $item) 
       {
   				  //echo "Votes: ";
-                  echo $item->game ."<br>  ";
-                  echo $item->party . " <br> ";
-                  echo $item->card . " <br> ";
-                  echo $item->strategy . "<br>  ";
-                  echo $item->coop . "<br>  ";
-                  echo $item->dice . "<br>  ";
+                  echo $item->game ."  ";
+                  echo $item->party . "  ";
+                  echo $item->card . "  ";
+                  echo $item->strategy . "  ";
+                  echo $item->coop . "  ";
+                  echo $item->dice . "  ";
                   echo "<br><br>";
       }
 // foreach($tempArray as $item) 
@@ -107,7 +107,7 @@ $jsonData = json_encode($tempArray);
 file_put_contents('survey.txt', $jsonData);  
 
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
-echo "$game". "<br>  "."  $party"." <br> ". "  $card"." <br> ". "  $strategy"." <br> ". "  $coop"." <br> ". "  $dice"." <br> ";
+echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
 echo "<br>";
 
 ?>
