@@ -1,39 +1,39 @@
 body 
 {
-       background-color: #4d94ff;
+       background-color: #b3d8ff;
        margin: auto;
        border: 4px solid; 
 } 
 p.title
 {
        font-size: 45px;
-       font-family: courier;
+       font-family: Times;
        text-align: center;
        color: white;
 }
 p.a
 {
        font-size: 18px;
-       font-family: courier;
+       font-family: Times;
        text-align: center;
        color: red;
 }
 p.leg
 {
        font-size: 22px;
-       font-family: courier;
+       font-family: Times;
        color: #293d3d;
 }
 p.questions
 {
        font-size: 22px;
-       font-family: courier;
+       font-family: Times;
        color: #330000;
 }
 p.button
 {
        font-size: 18px;
-       font-family: courier;
+       font-family: Times;
        text-align: center;
 }
 a:hover
@@ -41,23 +41,23 @@ a:hover
        text-decoration: none;
        background-color: #ccccff;
        color: #ccccff;
-       /*padding: 10px;
+       padding: 80px;
        width: 180px;
        bottom: 0;
        top: 0;
-       right: 0;*/
+       right: 0;
        
 }
 a 
 {
        color: #ffffff;
        text-decoration: none;
-       font-family: courier;
+       font-family: Times;
 }
 span 
 {
        font-size: 18px;
-       font-family: courier;
+       font-family: Times;
        text-align: center;
        color: black;
 }
@@ -71,8 +71,8 @@ input[type=submit].submit:hover
        text-decoration: none;
        background-color: #32a4e7;
        color: #ffffff;
-       padding: 20px;
-       width: 20px;
+       padding: 10px;
+       width: 220px;
        bottom: 0;
        top: 0;
        right: 0;
