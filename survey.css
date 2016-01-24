@@ -1,6 +1,6 @@
 body 
 {
-       background-color: #BEC4C4;
+       background-color: #4d94ff;
        margin: auto;
        border: 4px solid; 
 } 
@@ -11,39 +11,25 @@ p.title
        text-align: center;
        color: white;
 }
-p.button
-{
-       font-size: 18px;
-       font-family: courier;
-       text-align: center;
-}
-p.tableTitles1
+p.a
 {
        font-size: 18px;
        font-family: courier;
        text-align: center;
        color: blue;
 }
-p.tableTitles2
+p.questions
+{
+       font-size: 22px;
+       font-family: courier;
+       text-align: center;
+       color: white;
+}
+p.button
 {
        font-size: 18px;
        font-family: courier;
        text-align: center;
-       color: green;
-}
-p.tableTitles3
-{
-       font-size: 18px;
-       font-family: courier;
-       text-align: center;
-       color: #333333;
-}
-img
-{
-       width: 500px; 
-       height: 400px;
-       text-align: center;
-       display:none;
 }
 a:hover
 {
@@ -68,7 +54,7 @@ span
        font-size: 18px;
        font-family: courier;
        text-align: center;
-       color: red;
+       color: black;
 }
 button
 {
@@ -86,14 +72,6 @@ button:hover
        top: 0;
        right: 0;
        
-}
-div
-{
-      background-color: #4d4d4d; 
-      border: 4px solid; 
-      text-align: center; 
-      width: 1000px; 
-      margin: auto; 
 }
 input[type=radio].css-checkbox 
 {

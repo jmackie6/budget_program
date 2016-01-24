@@ -10,60 +10,60 @@
   		<p class="title">Game Survey</p>
     	<br>
   			<form action="survey.php" method="post">
-  				<fieldset><legend>Please Answer The Following Questions And Vote For Your Favorite Games</legend>
-  				<br>What Types of Games Do You Like Best?<br>
-  				<input type="radio" name="game" id="game" checked="checked" value="Party games" class="css-labels">Party games
-  				<input type="radio" name="game" id="game" value="Card Games">Card Games
-  				<input type="radio" name="game" id="game" value="Strategy games">Strategy games
-  				<input type="radio" name="game" id="game" value="Cooperative games">Cooperative games
-  				<input type="radio" name="game" id="game" value="Dice games">Dice games
-  				<input type="radio" name="game" id="game" value="other">other
+  				<fieldset><legend><p class="questions">Please Answer The Following Questions And Vote For Your Favorite Games</p></legend>
+  				<br><p class="questions">What Types of Games Do You Like Best?</p><br>
+  				<input type="radio" name="game" id="game" checked="checked" value="Party games" class="css-checkbox"><span>Party games</span>
+  				<input type="radio" name="game" id="game" value="Card Games" ><span>Card Games</span>
+  				<input type="radio" name="game" id="game" value="Strategy games"><span>Strategy games</span>
+  				<input type="radio" name="game" id="game" value="Cooperative games"><span>Cooperative games</span>
+  				<input type="radio" name="game" id="game" value="Dice games"><span>Dice games</span>
+  				<input type="radio" name="game" id="game" value="other"><span>Other</span>
   				<br><br>
-  				Favorite Party Games?<br>
+  				<p class="questions">Favorite Party Games?</p><br>
   				<input type="radio" name="party" id="party" checked="checked" value="Apples to Apples">Apples to Apples
   				<input type="radio" name="party" id="party" value="Coup">Coup
   				<input type="radio" name="party" id="party" value="Reverse Charades">Reverse Charades
   				<input type="radio" name="party" id="party" value="Catch Phase">Catch Phase
   				<input type="radio" name="party" id="party" value="Mafia">Mafia
   				<br><br>
-  				<p>Favorite Card Game?</p><br>
+  				<p class="questions">Favorite Card Game?</p><br>
                 <input type="radio" name="card" id="card" checked="checked" value="Uno">Uno
                 <input type="radio" name="card" id="card" value="War">War
                 <input type="radio" name="card" id="card" value="Phase 10">Phase 10
                 <input type="radio" name="card" id="card" value="Dominion">Dominion
                 <input type="radio" name="card" id="card" value="Love Letter">Love Letter
                 <br>
-                Favorite Strategy Games?<br>
+                <p class="questions">Favorite Strategy Games?</p><br>
                 <input type="radio" name="strategy" id="strategy" checked="checked" value="Chess">Chess
                 <input type="radio" name="strategy" id="strategy" value="Risk">Risk
                 <input type="radio" name="strategy" id="strategy" value="Ticket to Ride">Ticket to Ride
                 <input type="radio" name="strategy" id="strategy" value="Settlers of Catan">Settlers of Catan
                 <input type="radio" name="strategy" id="strategy" value="Stratego">Stratego
                 <br><br>
-                Favorite Cooperative Games?<br>
+                <p class="questions">Favorite Cooperative Games?</p><br>
                 <input type="radio" name="coop" id="coop" checked="checked" value="Pandemeic">Pandemeic
                 <input type="radio" name="coop" id="coop" value="Shadows Over Camolot">Shadows Over Camolot
                 <input type="radio" name="coop" id="coop" value="Forbidden Desert">Forbidden Desert
                 <input type="radio" name="coop" id="coop" value="Hanabi">Hanabi
                 <input type="radio" name="coop" id="coop" value="Ghost Stories">Ghost Stories
                 <br><br>
-                Favorite Dice Games?<br>
+                <p class="questions">Favorite Dice Games?</p><br>
                 <input type="radio" name="dice" id="dice" checked="checked" value="Yatzee">Yatzee
                 <input type="radio" name="dice" id="dice" value="Liars Dice">Liars Dice
                 <input type="radio" name="dice" id="dice" value="Heroscape">Heroscape
                 <input type="radio" name="dice" id="dice" value="Bunco">Bunco
                 <input type="radio" name="dice" id="dice" value="Bang!">Bang!<br><br>
 
-                <input style="text-align:center" type="submit" name="submit" value="Submit Game Votes"/><br>
+                <input class="button" type="submit" name="submit" value="Submit Game Votes"/><br>
 
             	</fieldset>
                 <br>
                 <a href= "survey.php" class="button"> 
-            		<span>See Previous Game Votes </span> 
+            		<p class="a">See Previous Game Votes </p> 
       			</a> 
             </form>
       	<a href= "index.html" class="button"> 
-            <span>Go back to assignment page</span> 
+            <p class="a">Go back to assignment page</p> 
       	</a> 
       	<br><br>
 <?php

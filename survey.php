@@ -106,6 +106,9 @@ file_put_contents('survey.txt', $jsonData);
 // file_put_contents('survey.txt', $jsonData);  
 //echo "$jsonData";
 ?>
+		<a href= "survey.html" class="button"> 
+            <p class="a">Go back to assignment page</p> 
+		</a> 
 <br><br>
 
     <body>
