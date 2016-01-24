@@ -54,7 +54,7 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 // $tempArray1[] = $data;
 if(isset($game))
 echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
-echo "<br>"
+echo "<br>";
 else
 echo "";
 // echo "<br>";
