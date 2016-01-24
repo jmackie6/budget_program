@@ -13,7 +13,7 @@ p.title
 }
 p.a
 {
-       font-size: 18px;
+       font-size: 15px;
        font-family: Times;
        text-align: center;
        color: red;
@@ -41,7 +41,7 @@ a:hover
        text-decoration: none;
        background-color: #ccccff;
        color: #ccccff;
-       padding: 80px;
+       padding: 8px;
        width: 180px;
        bottom: 0;
        top: 0;
