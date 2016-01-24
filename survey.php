@@ -75,7 +75,7 @@ $data_results = $data;
 $data_results = file_get_contents('survey.txt');
 
 $tempArray = json_decode($data_results);
-echo $tempArray;
+echo count($tempArray);
 
 foreach($tempArray as $item) 
       {
