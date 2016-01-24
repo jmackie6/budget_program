@@ -18,11 +18,17 @@ p.a
        text-align: center;
        color: red;
 }
-p.questions
+p.leg
 {
        font-size: 22px;
        font-family: courier;
        color: #293d3d;
+}
+p.questions
+{
+       font-size: 22px;
+       font-family: courier;
+       color: #330000;
 }
 p.button
 {
@@ -34,12 +40,12 @@ a:hover
 {
        text-decoration: none;
        background-color: #ccccff;
-       color: #ffffff;
-       padding: 10px;
+       color: #ccccff;
+       /*padding: 10px;
        width: 180px;
        bottom: 0;
        top: 0;
-       right: 0;
+       right: 0;*/
        
 }
 a 
@@ -66,7 +72,7 @@ input[type=submit].submit:hover
        background-color: #32a4e7;
        color: #ffffff;
        padding: 20px;
-       width: 220px;
+       width: 20px;
        bottom: 0;
        top: 0;
        right: 0;
@@ -83,7 +89,7 @@ button:hover
        background-color: #32a4e7;
        color: #ffffff;
        padding: 20px;
-       width: 220px;
+       width: 20px;
        bottom: 0;
        top: 0;
        right: 0;
