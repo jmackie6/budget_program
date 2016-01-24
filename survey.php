@@ -110,7 +110,7 @@ $jsonData = json_encode($tempArray);
 file_put_contents('survey.txt', $jsonData);  
 
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
-echo "<span>$game</span>". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
+echo "<span>.".$game. "</span>". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
 echo "<br>";
 
 foreach($tempArray as $item) 
