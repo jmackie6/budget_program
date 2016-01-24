@@ -104,7 +104,7 @@ foreach($tempArray as $item)
 //       }
 
 $tempArray[] = $data;
-echo $tempArray."<br>";
+// echo $tempArray."<br>";
 $jsonData = json_encode($tempArray);
 
 file_put_contents('survey.txt', $jsonData);  
@@ -112,7 +112,7 @@ file_put_contents('survey.txt', $jsonData);
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 echo "<span>$game</span>". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
 echo "<br>";
-
+echo $jsonData."<br>";
 ?>
 		<a href= "survey.html" class="button"> 
             <p class="a">Go back To Question Page</p> 
