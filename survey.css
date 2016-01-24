@@ -16,14 +16,13 @@ p.a
        font-size: 18px;
        font-family: courier;
        text-align: center;
-       color: blue;
+       color: red;
 }
 p.questions
 {
        font-size: 22px;
        font-family: courier;
-       text-align: center;
-       color: white;
+       color: #293d3d;
 }
 p.button
 {
@@ -34,7 +33,7 @@ p.button
 a:hover
 {
        text-decoration: none;
-       background-color: #32a4e7;
+       background-color: #ccccff;
        color: #ffffff;
        padding: 10px;
        width: 180px;
@@ -55,6 +54,23 @@ span
        font-family: courier;
        text-align: center;
        color: black;
+}
+input[type=submit].submit
+{
+      text-align: center;
+      margin: center;
+}
+input[type=submit].submit:hover
+{
+       text-decoration: none;
+       background-color: #32a4e7;
+       color: #ffffff;
+       padding: 20px;
+       width: 220px;
+       bottom: 0;
+       top: 0;
+       right: 0;
+       
 }
 button
 {
