@@ -50,7 +50,7 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 
 // $tempArray1[] = $data;
 if (isset($data)) {
-    echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+    echo "$game". ", "."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
     echo "<br>";
 }
 else
@@ -78,7 +78,7 @@ $tempArray = json_decode($data_results);
 foreach($tempArray as $item) 
       {
   				
-                  echo $item->game ."<br>";
+                  echo $item->game .", ";
                   echo $item->party . "<br>";
                   echo $item->card . "<br>";
                   echo $item->strategy . "<br>";
