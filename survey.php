@@ -33,21 +33,22 @@ echo "<h2>Votes</h2>";
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 //$data_results = $data;
-// <table style="margin: auto">
-//     		<colgroup>
-//         		<col span="6" style="background-color:#A3BCC4">
+?>
+<table style="margin: auto">
+    		<colgroup>
+        		<col span="6" style="background-color:#A3BCC4">
        
-//       		</colgroup>
-//       		<tr>
-//             	<th>game</th>
-//              	<th>party</th>
-//              	<th>card</th>
-//              	<th>strategy</th>
-//              	<th>coop</th>
-//              	<th>dice</th>
-//       		</tr>
-// 		</table> -->
-// 		<?php
+      		</colgroup>
+      		<tr>
+            	<th>game</th>
+             	<th>party</th>
+             	<th>card</th>
+             	<th>strategy</th>
+             	<th>coop</th>
+             	<th>dice</th>
+      		</tr>
+		</table> -->
+<?php
 
 // $tempArray1[] = $data;
 // if (isset($data)) {
@@ -61,15 +62,15 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 
 
 
-// echo "<br>";
-//                echo "<tr>";
-//                   echo "<td>"."$game"."</td>" . "                ";
-//                   echo "<td>"."$party"."</td>";
-//                   echo "<td>"."$card"."</td>";
-//                   echo "<td>"."$strategy"."</td>";
-//                   echo "<td>"."$coop"."</td>";
-//                   echo "<td>"."$dice"."</td>";
-//               echo "</tr>". "<br>";
+
+               echo "<tr>";
+                  echo "<td>"."$game"."</td>" . "                ";
+                  echo "<td>"."$party"."</td>";
+                  echo "<td>"."$card"."</td>";
+                  echo "<td>"."$strategy"."</td>";
+                  echo "<td>"."$coop"."</td>";
+                  echo "<td>"."$dice"."</td>";
+              echo "</tr>". "<br>";
 // $json = json_encode($tempArray1);
 
 $data_results = file_get_contents('survey.txt');
