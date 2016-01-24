@@ -58,7 +58,7 @@ $data_results = $data;
 // {
 // 	echo "";
 // }
-//echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+
 
 
 // echo "<br>";
@@ -106,6 +106,9 @@ $jsonData = json_encode($tempArray);
 
 file_put_contents('survey.txt', $jsonData);  
 
+//echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
+echo "<br>";
 
 ?>
 		<a href= "survey.html" class="button"> 
