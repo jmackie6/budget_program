@@ -32,7 +32,7 @@ $dice=$_REQUEST['dice'];
 echo "<h4>Votes</h4>";
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
-
+$data_results = $data;
 // <table style="margin: auto">
 //     		<colgroup>
 //         		<col span="6" style="background-color:#A3BCC4">
@@ -50,14 +50,14 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 // 		<?php
 
 // $tempArray1[] = $data;
-if (isset($data)) {
-    echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
-    echo "<br>";
-}
-else
-{
-	echo "";
-}
+// if (isset($data)) {
+//     echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
+//     echo "<br>";
+// }
+// else
+// {
+// 	echo "";
+// }
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 
 
@@ -85,7 +85,7 @@ foreach($tempArray as $item)
                   echo $item->strategy . "  ";
                   echo $item->coop . "  ";
                   echo $item->dice . "  ";
-                  echo "<br>";
+                  echo "<br><br>";
       }
 // foreach($tempArray as $item) 
 //       {
