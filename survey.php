@@ -115,15 +115,14 @@ echo "<br>";
 
 foreach($tempArray as $item) 
       {
-  				  //echo "Votes: ";
-
-                  echo "<span>". $item->game. "</span>";
+  				  
+                  echo $item->game;
                   echo $item->party . "  ";
                   echo $item->card . "  ";
                   echo $item->strategy . "  ";
                   echo $item->coop . "  ";
                   echo $item->dice . "  ";
-                  echo "<br><br>";
+                  echo "<br>";
       }
 ?>
 		<a href= "survey.html" class="button"> 
