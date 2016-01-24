@@ -82,7 +82,7 @@ foreach($tempArray as $item)
       {
   				  //echo "Votes: ";
 
-                  echo $item->game ."  ";
+                  echo "<span>$item->game</span>";
                   echo $item->party . "  ";
                   echo $item->card . "  ";
                   echo $item->strategy . "  ";
@@ -110,7 +110,7 @@ $jsonData = json_encode($tempArray);
 file_put_contents('survey.txt', $jsonData);  
 
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
-echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
+echo "<span>$game</span>". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
 echo "<br>";
 
 ?>
