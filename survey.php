@@ -29,7 +29,7 @@ $card=$_REQUEST['card'];
 $strategy=$_REQUEST['strategy'];
 $coop=$_REQUEST['coop'];
 $dice=$_REQUEST['dice'];
-echo "<h4>Votes</h4>";
+echo "<h2>Votes</h2>";
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 $data_results = $data;
@@ -79,12 +79,12 @@ $tempArray = json_decode($data_results);
 foreach($tempArray as $item) 
       {
   				  //echo "Votes: ";
-                  echo $item->game ."  ";
-                  echo $item->party . "  ";
-                  echo $item->card . "  ";
-                  echo $item->strategy . "  ";
-                  echo $item->coop . "  ";
-                  echo $item->dice . "  ";
+                  echo $item->game ."<br>  ";
+                  echo $item->party . " <br> ";
+                  echo $item->card . " <br> ";
+                  echo $item->strategy . "<br>  ";
+                  echo $item->coop . "<br>  ";
+                  echo $item->dice . "<br>  ";
                   echo "<br><br>";
       }
 // foreach($tempArray as $item) 
@@ -107,7 +107,7 @@ $jsonData = json_encode($tempArray);
 file_put_contents('survey.txt', $jsonData);  
 
 //echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
-echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
+echo "$game". "<br>  "."  $party"." <br> ". "  $card"." <br> ". "  $strategy"." <br> ". "  $coop"." <br> ". "  $dice"." <br> ";
 echo "<br>";
 
 ?>
