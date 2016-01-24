@@ -32,7 +32,7 @@ $dice=$_REQUEST['dice'];
 echo "<h2>Votes</h2>";
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
-$data_results = $data;
+//$data_results = $data;
 // <table style="margin: auto">
 //     		<colgroup>
 //         		<col span="6" style="background-color:#A3BCC4">
@@ -75,7 +75,7 @@ $data_results = $data;
 $data_results = file_get_contents('survey.txt');
 
 $tempArray = json_decode($data_results);
-echo $tempArray."<br>";
+
 
 
 foreach($tempArray as $item) 
@@ -104,7 +104,7 @@ foreach($tempArray as $item)
 //       }
 
 $tempArray[] = $data;
-
+echo $tempArray."<br>";
 $jsonData = json_encode($tempArray);
 
 file_put_contents('survey.txt', $jsonData);  
