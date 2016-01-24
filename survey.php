@@ -7,7 +7,7 @@
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     	</header>
   	<body><br>
-  		<p class="title">Game Survey Results</p>
+  		<p class="title">Game Survey Results</p><hr>
     	<br>
 <?php
     	
@@ -54,6 +54,7 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 // $tempArray1[] = $data;
 if(isset($game))
 echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
+echo "<br>"
 else
 echo "";
 // echo "<br>";
@@ -101,13 +102,10 @@ $jsonData = json_encode($tempArray);
 
 file_put_contents('survey.txt', $jsonData);  
 
-// $jsonData = json_encode($tempArray);
 
-// file_put_contents('survey.txt', $jsonData);  
-//echo "$jsonData";
 ?>
 		<a href= "survey.html" class="button"> 
-            <p class="a">Go back to assignment page</p> 
+            <p class="a">Go back To Question Page</p> 
 		</a> 
 <br><br>
 
