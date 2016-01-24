@@ -75,11 +75,13 @@ $data_results = $data;
 $data_results = file_get_contents('survey.txt');
 
 $tempArray = json_decode($data_results);
-echo count($tempArray);
+echo count($game) . "<br>;
+
 
 foreach($tempArray as $item) 
       {
   				  //echo "Votes: ";
+
                   echo $item->game ."  ";
                   echo $item->party . "  ";
                   echo $item->card . "  ";
