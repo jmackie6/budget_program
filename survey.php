@@ -30,9 +30,6 @@ $strategy=$_REQUEST['strategy'];
 $coop=$_REQUEST['coop'];
 $dice=$_REQUEST['dice'];
 
-
-
-
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
 
 // <table style="margin: auto">
@@ -52,11 +49,10 @@ $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" =>
 // 		<?php
 
 // $tempArray1[] = $data;
-if(isset($game))
+
 echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 echo "<br>";
-else
-echo "";
+
 // echo "<br>";
 //                echo "<tr>";
 //                   echo "<td>"."$game"."</td>" . "                ";
@@ -69,9 +65,9 @@ echo "";
 // $json = json_encode($tempArray1);
 
 $data_results = file_get_contents('survey.txt');
-//echo "$data_results";
+
 $tempArray = json_decode($data_results);
-//echo "$tempArray";
+
 foreach($tempArray as $item) 
       {
   				
@@ -107,7 +103,7 @@ file_put_contents('survey.txt', $jsonData);
 		<a href= "survey.html" class="button"> 
             <p class="a">Go back To Question Page</p> 
 		</a> 
-<br><br>
+		<br><br>
 
     <body>
 <html>
