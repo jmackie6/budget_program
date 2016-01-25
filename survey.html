@@ -1,3 +1,9 @@
+<?php
+	
+	session_start();
+	 if (isset($_POST['submit'])) {header('Location: survey.php');}
+
+ ?>
 <html>
   <header>
     	<title>Jared's Survey</title>
@@ -61,13 +67,11 @@
                 <a href= "survey.php" > 
             		<p class="results">See Previous Game Votes </p> 
       			</a> 
+      			<?php
+      				include "survey.php";
+      			?>
             </form>
-<?php
-	
-	session_start();
-	 if (isset($_POST['submit'])) {header('Location: survey.php');}
 
- ?>
       	<br><br><a href= "index.html"> 
             <p class="a">Go back to assignment page</p> 
       	</a> 
