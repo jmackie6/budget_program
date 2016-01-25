@@ -1,7 +1,7 @@
 <?php
   
   session_start();
-   if (isset($_POST['submit'])) {header('Location: survey.php');}
+   if (isset($_POST['submit'])) {header('Location: record.php');}
 
  ?>
 <html>
