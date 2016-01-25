@@ -21,12 +21,13 @@ session_start();
   $_session['dice'] = $_POST['dice'];
   //session_start();
   header('Location: results.php'); 
+ }
+ else
+ {
+   header('Location: survey.php'); 
+ }
 
-  } 
-  else
-  {
-      header('Location: results.php'); 
-  }
+
 
 $game     = filter_input(INPUT_POST, 'game',     FILTER_SANITIZE_STRING);
 $party    = filter_input(INPUT_POST, 'party',    FILTER_VALIDATE_EMAIL );
@@ -77,6 +78,7 @@ file_put_contents('survey.txt', $jsonData);
 echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
 //echo "<br>".$game. "<br>  "."  $party"." <br> ". "  $card"." <br> ". "  $strategy"."<br>  ". "  $coop"." <br> ". "  $dice"."<br>  ";
 echo "<br>";
+
 
 ?>
 		<a href= "survey.php" class="button"> 

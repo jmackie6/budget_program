@@ -15,7 +15,7 @@
     <body><br>
       <p class="title">Game Survey</p>
       <br>
-        <form action="survey.php" method="post">
+        <form action="record.php" method="post">
           <fieldset><legend><p class="leg">Please Answer The Following Questions And Vote For Your Favorite Games</p></legend>
           <br><p class="questions">What Types of Games Do You Like Best?</p><br>
           <input type="radio" name="game" id="game" checked="checked" value="Party games"><span>Party games</span>
@@ -64,7 +64,7 @@
 
               </fieldset>
                 <br>
-                <a href= "survey.php" > 
+                <a href= "results.php" > 
                 <p class="results">See Previous Game Votes </p> 
             </a> 
             <?php
