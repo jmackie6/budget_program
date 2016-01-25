@@ -1,133 +1,81 @@
+<?php
+  
+  session_start();
+   if (isset($_POST['submit'])) {header('Location: survey.php');}
+
+ ?>
 <html>
   <header>
-    	<title>Jared's Survey</title>
-    	<link rel="stylesheet" type="text/css" href="survey.css">
-    	<script src="homePage.js"></script>
-    	<script src="jquery-1.11.3.min.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    	</header>
-  	<body><br>
-  		<p class="title">Game Survey Results</p><hr>
-    	<br>
-<?php
-    	
+      <title>Jared's Survey</title>
+      <link rel="stylesheet" type="text/css" href="survey.css">
+      <script src="homePage.js"></script>
+      <script src="jquery-1.11.3.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      </header>
+    <body><br>
+      <p class="title">Game Survey</p>
+      <br>
+        <form action="survey.php" method="post">
+          <fieldset><legend><p class="leg">Please Answer The Following Questions And Vote For Your Favorite Games</p></legend>
+          <br><p class="questions">What Types of Games Do You Like Best?</p><br>
+          <input type="radio" name="game" id="game" checked="checked" value="Party games"><span>Party games</span>
+          <input type="radio" name="game" id="game" value="Card Games" ><span>Card Games</span>
+          <input type="radio" name="game" id="game" value="Strategy games"><span>Strategy games</span>
+          <input type="radio" name="game" id="game" value="Cooperative games"><span>Cooperative games</span>
+          <input type="radio" name="game" id="game" value="Dice games"><span>Dice games</span>
+          <input type="radio" name="game" id="game" value="other"><span>Other</span>
+          <br><br>
+          <p class="questions">Favorite Party Games?</p><br>
+          <input type="radio" name="party" id="party" checked="checked" value="Apples to Apples"><span>Apples to Apples</span>
+          <input type="radio" name="party" id="party" value="Coup"><span>Coup</span>
+          <input type="radio" name="party" id="party" value="Reverse Charades"><span>Reverse Charades</span>
+          <input type="radio" name="party" id="party" value="Catch Phase"><span>Catch Phase</span>
+          <input type="radio" name="party" id="party" value="Mafia"><span>Mafia</span>
+          <br><br>
+          <p class="questions">Favorite Card Game?</p><br>
+                <input type="radio" name="card" id="card" checked="checked" value="Uno"><span>Uno</span>
+                <input type="radio" name="card" id="card" value="War"><span>War</span>
+                <input type="radio" name="card" id="card" value="Phase 10"><span>Phase 10</span>
+                <input type="radio" name="card" id="card" value="Dominion"><span>Dominion</span>
+                <input type="radio" name="card" id="card" value="Love Letter"><span>Love Letter</span>
+                <br>
+                <p class="questions">Favorite Strategy Games?</p><br>
+                <input type="radio" name="strategy" id="strategy" checked="checked" value="Chess"><span>Chess</span>
+                <input type="radio" name="strategy" id="strategy" value="Risk"><span>Risk</span>
+                <input type="radio" name="strategy" id="strategy" value="Ticket to Ride"><span>Ticket to Ride</span>
+                <input type="radio" name="strategy" id="strategy" value="Settlers of Catan"><span>Settlers of Catan</span>
+                <input type="radio" name="strategy" id="strategy" value="Stratego"><span>Stratego</span>
+                <br><br>
+                <p class="questions">Favorite Cooperative Games?</p><br>
+                <input type="radio" name="coop" id="coop" checked="checked" value="Pandemeic"><span>Pandemeic</span>
+                <input type="radio" name="coop" id="coop" value="Shadows Over Camolot"><span>Shadows Over Camolot</span>
+                <input type="radio" name="coop" id="coop" value="Forbidden Desert"><span>Forbidden Desert</span>
+                <input type="radio" name="coop" id="coop" value="Hanabi"><span>Hanabi</span>
+                <input type="radio" name="coop" id="coop" value="Ghost Stories"><span>Ghost Stories</span>
+                <br><br>
+                <p class="questions">Favorite Dice Games?</p><br>
+                <input type="radio" name="dice" id="dice" checked="checked" value="Yatzee"><span>Yatzee</span>
+                <input type="radio" name="dice" id="dice" value="Liars Dice"><span>Liars Dice</span>
+                <input type="radio" name="dice" id="dice" value="Heroscape"><span>Heroscape</span>
+                <input type="radio" name="dice" id="dice" value="Bunco"><span>Bunco</span>
+                <input type="radio" name="dice" id="dice" value="Bang!"><span>Bang!</span><br><br>
 
+                <input class="submit" type="submit" name="submit" value="Submit Game Votes"/><br>
 
-$game     = filter_input(INPUT_POST, 'game',     FILTER_SANITIZE_STRING);
-$party    = filter_input(INPUT_POST, 'party',    FILTER_VALIDATE_EMAIL );
-$card    = filter_input(INPUT_POST, 'card',    FILTER_SANITIZE_STRING);
-$strategy  = filter_input(INPUT_POST, 'strategy',  FILTER_SANITIZE_STRING);
-$coop = filter_input(INPUT_POST, 'coop', FILTER_SANITIZE_STRING);
-$dice = filter_input(INPUT_POST, 'dice', FILTER_SANITIZE_STRING);
+              </fieldset>
+                <br>
+                <a href= "survey.php" > 
+                <p class="results">See Previous Game Votes </p> 
+            </a> 
+            <?php
+              include "record.php";
+            ?>
+            </form>
 
-$game=$_REQUEST['game'];
-$party=$_REQUEST['party'];
-$card=$_REQUEST['card'];
-$strategy=$_REQUEST['strategy'];
-$coop=$_REQUEST['coop'];
-$dice=$_REQUEST['dice'];
-
-session_start();
-	 if (isset($_POST['submit'])) { 
-	$_session['game'] = $_POST['game'];
-	$_session['party'] = $_POST['party'];
-	$_session['card'] = $_POST['card'];
-	$_session['strategy'] = $_POST['strategy'];
-	$_session['coop'] = $_POST['coop'];
-	$_session['dice'] = $_POST['dice'];
-	//session_start();
-	header('Location: survey.php'); 
-
-	} 
-
-echo "<h2>Votes</h2>";
-
-$data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
-//$data_results = $data;
-
- // <table style="margin: auto">
- //    		<colgroup>
- //        		<col span="6" style="background-color:#A3BCC4">
-       
- //      		</colgroup>
- //      		<tr>
- //            	<th>game</th>
- //             	<th>party</th>
- //             	<th>card</th>
- //             	<th>strategy</th>
- //             	<th>coop</th>
- //             	<th>dice</th>
- //      		</tr>
- // 		</table> --> -->
-
-// $tempArray1[] = $data;
-// if (isset($data)) {
-//     echo "$game". "  "."  $party"."  ". "  $card"."  ". "  $strategy"."  ". "  $coop"."  ". "  $dice"."  ";
-//     echo "<br>";
-// }
-// else
-// {
-// 	echo "";
-// }
-
-
-
-
-              //  echo "<tr>";
-              //     echo "<td>"."$game"."</td>" . "                ";
-              //     echo "<td>"."$party"."</td>";
-              //     echo "<td>"."$card"."</td>";
-              //     echo "<td>"."$strategy"."</td>";
-              //     echo "<td>"."$coop"."</td>";
-              //     echo "<td>"."$dice"."</td>";
-              // echo "</tr>". "<br>";
-// $json = json_encode($tempArray1);
-
-$data_results = file_get_contents('survey.txt');
-
-$tempArray = json_decode($data_results);
-
-
-
-foreach($tempArray as $item) 
-      {
-  		
-                  echo $item->game. "<br> ";
-                  echo $item->party . " <br> ";
-                  echo $item->card . " <br> ";
-                  echo $item->strategy . " <br> ";
-                  echo $item->coop . " <br> ";
-                  echo $item->dice . "<br>  ";
-                  echo "<br><br>";
-      }
-// foreach($tempArray as $item) 
-//       {
-//       		echo "<br>";
-//                echo "<tr>";
-//                   echo "<td>".$item->game."</td>" . "                ";
-//                   echo "<td>".$item->party."</td>";
-//                   echo "<td>".$item->card."</td>";
-//                   echo "<td>".$item->strategy."</td>";
-//                   echo "<td>".$item->coop."</td>";
-//                   echo "<td>".$item->dice."</td>";
-//               echo "</tr>". "<br>";
-//       }
-
-$tempArray[] = $data;
-// echo $tempArray."<br>";
-$jsonData = json_encode($tempArray);
-
-file_put_contents('survey.txt', $jsonData);  
-
-echo "$game"."<br>"."  $party"."<br>". "  $card"."<br>". "  $strategy"."<br>". "  $coop"."<br>". "  $dice"."<br>";
-//echo "<br>".$game. "<br>  "."  $party"." <br> ". "  $card"." <br> ". "  $strategy"."<br>  ". "  $coop"." <br> ". "  $dice"."<br>  ";
-echo "<br>";
-
-?>
-		<a href= "survey.html" class="button"> 
-            <p class="a">Go back To Question Page</p> 
-		</a> 
-		<br><br>
+        <br><br><a href= "index.html"> 
+            <p class="a">Go back to assignment page</p> 
+        </a> 
+        <br><br>
 
     <body>
 <html>
