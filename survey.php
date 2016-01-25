@@ -1,9 +1,9 @@
-<?php
-  
-  session_start();
-   if (isset($_POST['submit'])) {header('Location: record.php');}
 
- ?>
+  
+//  session_start();
+ //  if (isset($_POST['submit'])) {header('Location: record.php');}
+
+
 <html>
   <header>
       <title>Jared's Survey</title>
