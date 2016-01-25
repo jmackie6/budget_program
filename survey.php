@@ -67,7 +67,9 @@
                 <a href= "results.php" > 
                 <p class="results">See Previous Game Votes </p> 
             </a> 
-            
+            <?php
+              include "record.php";
+            ?>
             </form>
 
         <br><br><a href= "index.html"> 
