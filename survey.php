@@ -36,7 +36,7 @@ session_start();
 	$_session['coop'] = $_POST['coop'];
 	$_session['dice'] = $_POST['dice'];
 	//session_start();
-	if (isset($_SESSION['submit'])) { header('Location: survey.php'); }
+	header('Location: survey.php'); 
 
 	} 
 
