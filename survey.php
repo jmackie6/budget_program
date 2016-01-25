@@ -27,7 +27,7 @@ $strategy=$_REQUEST['strategy'];
 $coop=$_REQUEST['coop'];
 $dice=$_REQUEST['dice'];
 
-session_start()
+session_start();
 	 if (isset($_POST['submit'])) { 
 	$_session['game'] = $_POST['game'];
 	$_session['party'] = $_POST['party'];
@@ -37,7 +37,7 @@ session_start()
 	$_session['dice'] = $_POST['dice'];
 
 	} 
-	
+
 echo "<h2>Votes</h2>";
 
 $data = array("game" => $game, "party" => $party, "card" => $card, "strategy" => $strategy, "coop" => $coop, "dice" => $dice);
