@@ -61,6 +61,7 @@ p.upper
 
 .menuitem 
 {
+
     width: 165px;
     float: left;
     background-color: #1f1f2e;
@@ -70,6 +71,7 @@ p.upper
     padding: 2px;
     text-align: center;
     cursor: pointer;
+    
 }
 
 a:hover

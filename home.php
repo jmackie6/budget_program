@@ -116,10 +116,11 @@ mysql_select_db($database);
 // $connection = mysql_connect('localhost', 'root', 'soccer66'); //The Blank string is the password
 // mysql_select_db('budget_program');
 
+
 $query = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; //You don't need a ; like you do in SQL
 $result = mysql_query($query);
 
-//echo "<table>"; // start a table tag in the HTML
+
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 echo "<h3>Your Income is: " . $row['income'] . "</h3>";  //$row['index'] the index here is a field name
