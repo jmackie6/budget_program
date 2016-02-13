@@ -1,6 +1,7 @@
 body 
 {
-       background-color: #BEC4C4;
+       /*background-color: #BEC4C4;*/
+       background-color: #d1d1e0
        margin: auto;
 } 
 h3.title   
@@ -24,7 +25,7 @@ p.upper
 
 #top 
 {
-       background-color: #3366FF;
+       background-color: #0000b3;
        color: #ffffff;
        padding: 15px;
 }
@@ -62,7 +63,7 @@ p.upper
 {
     width: 165px;
     float: left;
-    background-color: #555555;
+    background-color: #1f1f2e;
     color: #ffffff;
     list-style-type: none;
     margin: 4px;
@@ -75,7 +76,19 @@ a:hover
 {
        text-decoration: none;
        background-color: #32a4e7;
-       color: #ffffff;
+       color: #000000;
+       padding: 10px;
+       width: 180px;
+       bottom: 0;
+       top: 0;
+       right: 0;
+       
+}
+a.sign:hover
+{
+       text-decoration: none;
+       background-color: #ff0000;
+       color: #000000;
        padding: 10px;
        width: 180px;
        bottom: 0;

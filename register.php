@@ -12,7 +12,7 @@ if(isset($_POST['btn-signup']))
  $email = mysql_real_escape_string($_POST['email']);
  $upass = md5(mysql_real_escape_string($_POST['pass']));
  
- if(mysql_query("INSERT INTO users(username,email,password) VALUES('$uname','$email','$upass')"))
+ if(mysql_query("INSERT INTO user (username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>
         <script>alert('successfully registered ');</script>
@@ -30,7 +30,7 @@ if(isset($_POST['btn-signup']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login & Registration System</title>
+<title>Login/Register System</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 </head>
