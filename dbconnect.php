@@ -37,7 +37,6 @@ $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or di
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 ?>
 
-
 <?php
 // define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
 // define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 

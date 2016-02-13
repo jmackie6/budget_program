@@ -104,7 +104,6 @@ $userRow=mysql_fetch_array($res);
     </div>
       <div id="main">
        <?php
-
 // $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
 // $database = 'budget_program';
 // $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');

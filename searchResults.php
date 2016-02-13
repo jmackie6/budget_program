@@ -40,8 +40,7 @@
      
       <div id="main">
        
-      <?php
-        
+      <?php    
 // $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
 // $database = 'budget_program';
 // $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
