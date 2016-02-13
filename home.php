@@ -113,29 +113,29 @@ $userRow=mysql_fetch_array($res);
 // $connection = mysql_connect('$server', '$username', '$password'); //The Blank string is the password
 // mysql_select_db('$database');
 
-$server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
-$database = 'budget_program';
-$port = getenv('OPENSHIFT_MYSQL_DB_PORT');
-$username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-$host = $server . ":" . $port;
-// $dsn = 'mysql:host='.$server.';dbname='.$database;
+// $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
+// $database = 'budget_program';
+// $port = getenv('OPENSHIFT_MYSQL_DB_PORT');
+// $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+// $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+// $host = $server . ":" . $port;
+// // $dsn = 'mysql:host='.$server.';dbname='.$database;
 
-$connection = mysql_connect($host, $username, $password);
-mysql_select_db('$database');
+// $connection = mysql_connect($host, $username, $password);
+// mysql_select_db($database);
 
-$query = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; //You don't need a ; like you do in SQL
-$result = mysql_query($query);
+// $query = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; //You don't need a ; like you do in SQL
+// $result = mysql_query($query);
 
 
 
-while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
-echo "<h3>Your Income is: " . $row['income'] . "</h3>";  //$row['index'] the index here is a field name
-}
+// while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
+// echo "<h3>Your Income is: " . $row['income'] . "</h3>";  //$row['index'] the index here is a field name
+// }
 
 //echo "</table>"; //Close the table in HTML
 
-mysql_close(); //Make sure to close out the database connection
+// mysql_close(); //Make sure to close out the database connection
 ?>
         
      </div>
