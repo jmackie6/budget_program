@@ -44,10 +44,10 @@ if(isset($_POST['btn-signup']))
 <td><input type="text" name="uname" placeholder="User Name" required /></td>
 </tr>
 <tr>
-<td><input type="email" name="email" placeholder="Your Email" required /></td>
+<td><input type="password" name="pass" placeholder="Your Password" required /></td>
 </tr>
 <tr>
-<td><input type="password" name="pass" placeholder="Your Password" required /></td>
+<td><input type="email" name="email" placeholder="Your Email" required /></td>
 </tr>
 <tr>
 <td><button type="submit" name="btn-signup">Sign Me Up</button></td>
