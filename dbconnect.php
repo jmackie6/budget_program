@@ -8,7 +8,7 @@ $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 // $connection = mysql_connect($server, $username, $password); //The Blank string is the password
 // mysql_select_db($database);
 
-if(!mysql_connect($server, $username, $password)
+if(!mysql_connect('$server', '$username', '$password')
 {
      die('oops connection problem ! --> '.mysql_error());
 }
