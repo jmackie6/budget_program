@@ -22,6 +22,7 @@ if(isset($_POST['btn-signup']))
  else
  {
   ?>
+  
         <script>alert('error while registering you...');</script>
         <?php
  }
