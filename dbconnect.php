@@ -33,8 +33,8 @@ $db_name = constant("DB_NAME"); // Database name
 
 //$db_name = 'budget_program'
 
-$mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
-mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
+$mysqlCon = mysql_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysql_error($mysqlCon));
+mysql_select_db($mysqlCon, $db_name) or die("Error: " . mysql_error($mysqlCon));
 ?>
 
 <?php
