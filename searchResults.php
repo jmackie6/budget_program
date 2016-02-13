@@ -84,7 +84,6 @@ mysql_select_db($db_database, $con);
           echo '<br /> rent: '.$row['rent'];  
           //echo '<br /> email: '.$row['email'];   
         }  
-
       ?>
      </div>
    <ul id="menulist">
