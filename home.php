@@ -105,16 +105,24 @@ $userRow=mysql_fetch_array($res);
       <div id="main">
        <?php
 
+// $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
+// $database = 'budget_program';
+// $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+// $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+
+// $connection = mysql_connect('$server', '$username', '$password'); //The Blank string is the password
+// mysql_select_db('$database');
+
 $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
 $database = 'budget_program';
+$port = getenv('OPENSHIFT_MYSQL_DB_PORT');
 $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
 $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+$host = $server . ":" . $port;
+// $dsn = 'mysql:host='.$server.';dbname='.$database;
 
-$connection = mysql_connect('$server', '$username', '$password'); //The Blank string is the password
+$connection = mysql_connect($host, $username, $password);
 mysql_select_db('$database');
-
-// $connection = mysql_connect('localhost', 'root', 'soccer66'); //The Blank string is the password
-// mysql_select_db('budget_program');
 
 
 $query = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; //You don't need a ; like you do in SQL
