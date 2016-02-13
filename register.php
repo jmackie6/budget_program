@@ -13,7 +13,7 @@ if(isset($_POST['btn-signup']))
  $email = mysql_real_escape_string($_POST['email']);
  $upass = md5(mysql_real_escape_string($_POST['pass']));
 
- if(mysql_query("INSERT INTO user (username,password,email) VALUES('$uname','$upass','$email')"))
+ if(mysql_query("INSERT INTO user (username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>
         <script>alert('successfully registered ');</script>
@@ -44,10 +44,10 @@ if(isset($_POST['btn-signup']))
 <td><input type="text" name="uname" placeholder="User Name" required /></td>
 </tr>
 <tr>
-<td><input type="password" name="pass" placeholder="Your Password" required /></td>
+<td><input type="email" name="email" placeholder="Your Email" required /></td>
 </tr>
 <tr>
-<td><input type="email" name="email" placeholder="Your Email" required /></td>
+<td><input type="password" name="pass" placeholder="Your Password" required /></td>
 </tr>
 <tr>
 <td><button type="submit" name="btn-signup">Sign Me Up</button></td>
