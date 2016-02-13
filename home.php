@@ -124,7 +124,6 @@ $host = $server . ":" . $port;
 $connection = mysql_connect($host, $username, $password);
 mysql_select_db('$database');
 
-
 $query = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; //You don't need a ; like you do in SQL
 $result = mysql_query($query);
 
