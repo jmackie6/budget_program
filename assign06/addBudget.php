@@ -41,27 +41,22 @@
       <div id="main">
        
 <?php
-        
-        
-$db_hostname = 'localhost';
-$db_username = 'root';
-$db_password = 'soccer66';
-$db_database = 'budget_program';
 
-// Database Connection String
-$con = mysql_connect($db_hostname,$db_username,$db_password);
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
+define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
+define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME', getenv('OPENSHIFT_GEAR_NAME'));
 
-$con = mysql_connect($db_hostname,$db_username,$db_password);
-if (!$con)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
+$dbhost = constant("DB_HOST"); // Host name 
+$dbport = constant("DB_PORT"); // Host port
+$dbusername = constant("DB_USER"); // Mysql username 
+$dbpassword = constant("DB_PASS"); // Mysql password 
+$db_name = constant("DB_NAME"); // Database name 
 
-mysql_select_db($db_database, $con);
+
+$mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
+mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
 session_start();
 include_once 'dbconnect.php';
@@ -70,10 +65,11 @@ if(!isset($_SESSION['user']))
 {
  header("Location: main.php");
 }
+
 $res=mysql_query("SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 
-mysql_select_db($db_database, $con);
+mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
         $b_food = mysql_real_escape_string($_REQUEST['b_food']);     
         $b_rent = mysql_real_escape_string($_REQUEST['b_rent']);  
