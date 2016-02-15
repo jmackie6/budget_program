@@ -58,7 +58,6 @@ $db_name = constant("DB_NAME"); // Database name
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-
 session_start();
 include_once 'dbconnect.php';
 
