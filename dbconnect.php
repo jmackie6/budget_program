@@ -1,23 +1,5 @@
 <?php
-// $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
-// $database = 'budget_program';
-// $port = getenv('OPENSHIFT_MYSQL_DB_PORT');
-// $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-// $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-// $host = $server . ":" . $port;
-// // $dsn = 'mysql:host='.$server.';dbname='.$database;
 
-// // $connection = mysql_connect($server, $username, $password); //The Blank string is the password
-// // mysql_select_db($database);
-
-// if(!mysql_connect($host, $username, $password)
-// {
-//      die('oops connection problem ! --> '.mysql_error());
-// }
-// if(!mysql_select_db('budget_program'))
-// {
-//      die('oops database selection problem ! --> '.mysql_error());
-// }
 
 define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
 define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
@@ -31,7 +13,6 @@ $dbusername = constant("DB_USER"); // Mysql username
 $dbpassword = constant("DB_PASS"); // Mysql password 
 $db_name = constant("DB_NAME"); // Database name 
 
-//$db_name = 'budget_program'
 
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));

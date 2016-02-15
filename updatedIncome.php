@@ -2,7 +2,7 @@
 <html lang = "en">
   <head>
        <meta charset = "utf-8" />
-       <title>Monthly Budget Helper</title>
+       <title></title>
        <link rel="stylesheet" type="text/css" href="home.css">
        <style>
          P.mainTitle 
@@ -33,18 +33,29 @@
   </head>
   <body>
      <div id="top">
-       <p class="mainTitle">Search Results</P> 
+       <p class="mainTitle"></P> 
        
         
      </div>
      
       <div id="main">
        
-      <?php    
+<?php
+        
+        
+$db_hostname = 'localhost';
+$db_username = 'root';
+$db_password = 'soccer66';
+$db_database = 'budget_program';
 
-// // Database Connection String
-// $con = mysql_connect($db_hostname,$db_username,$db_password);
+// Database Connection String
+$con = mysql_connect($db_hostname,$db_username,$db_password);
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
 
+mysql_select_db($db_database, $con);
 
 session_start();
 include_once 'dbconnect.php';
@@ -56,20 +67,18 @@ if(!isset($_SESSION['user']))
 $res=mysql_query("SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 
-mysql_select_db($db_database, $con);
+$income = mysql_real_escape_string($_REQUEST['income']);     
+$month = mysql_real_escape_string($_REQUEST['month']);  
+$sql = "UPDATE income SET income = $income WHERE user_id = $userRow[user_id]"; 
 
-        $term = mysql_real_escape_string($_REQUEST['search']);     
-        
-        $sql1 = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $term"; 
-        
-        $r_query = mysql_query($sql1); 
-        
-        while ($row = mysql_fetch_array($r_query)){   
-          echo '<br /> food: ' .$row['food'];  
-          echo '<br /> rent: '.$row['rent'];  
-          //echo '<br /> email: '.$row['email'];   
-        }  
-      ?>
+
+if (mysql_query($sql) === TRUE) {
+    echo "Update created successfully";
+} else {
+    echo "Error: " . $sql . "<br>";
+}
+
+?>
      </div>
    <ul id="menulist">
           <a  class="page2" href="home.php">                        

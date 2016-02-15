@@ -14,6 +14,7 @@ if(isset($_POST['btn-login']))
  $row=mysqli_fetch_array($res);
  if($row['password']==md5($upass))
  {
+ 	
   $_SESSION['user'] = $row['user_id'];
   header("Location: home.php");
  }

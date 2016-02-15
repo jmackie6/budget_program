@@ -16,6 +16,7 @@ h5.subTitles
 }
 p.italic
 {
+  
        font-style: italic;       
 }
 p.upper 
@@ -71,7 +72,7 @@ p.upper
     padding: 2px;
     text-align: center;
     cursor: pointer;
-    
+
 }
 
 a:hover

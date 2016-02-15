@@ -104,21 +104,6 @@ $userRow=mysqli_fetch_array($res);
     </div>
       <div id="main">
        <?php
-// $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
-// $database = 'budget_program';
-// $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-// $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-
-// $connection = mysql_connect('$server', '$username', '$password'); //The Blank string is the password
-// mysql_select_db('$database');
-
-// $server  = getenv('OPENSHIFT_MYSQL_DB_HOST');
-// $database = 'budget_program';
-// $port = getenv('OPENSHIFT_MYSQL_DB_PORT');
-// $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-// $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-// $host = $server . ":" . $port;
-// // $dsn = 'mysql:host='.$server.';dbname='.$database;
 
 // $connection = mysql_connect($host, $username, $password);
 // mysql_select_db($database);
@@ -132,7 +117,6 @@ $userRow=mysqli_fetch_array($res);
 // echo "<h3>Your Income is: " . $row['income'] . "</h3>";  //$row['index'] the index here is a field name
 // }
 
-//echo "</table>"; //Close the table in HTML
 
 // mysql_close(); //Make sure to close out the database connection
 ?>
