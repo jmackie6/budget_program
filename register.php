@@ -45,6 +45,7 @@ if (mysql_query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>";
 }
+}
 
  // if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  // {
