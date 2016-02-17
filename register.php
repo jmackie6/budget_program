@@ -13,7 +13,8 @@ if(isset($_POST['btn-signup']))
  $email = mysqli_real_escape_string($_POST['email']);
  $upass = md5(mysqli_real_escape_string($_POST['pass']));
 
- if(mysqli_query("INSERT INTO user (username,email,password) VALUES('$uname','$email','$upass')"))
+
+ if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>
         <script>alert('successfully registered ');</script>
