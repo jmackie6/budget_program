@@ -14,6 +14,7 @@ if(isset($_POST['btn-signup']))
  $upass = md5(mysqli_real_escape_string($_POST['pass']));
 
 
+
  if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>
