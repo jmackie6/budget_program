@@ -37,22 +37,19 @@ $db_name = constant("DB_NAME"); // Database name
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
- if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
- {
-  ?>
-        <script>alert('successfully registered ');</script>
-        <?php
- }
- else
- {
-  ?>
+$sql = "INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"
 
-
-        <script>alert('error while registering you...');</script>
-        <?php
- }
+if (mysql_query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>";
 }
+
+ // if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
+ // {
+ //  
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
