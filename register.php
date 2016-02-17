@@ -6,6 +6,8 @@ if(isset($_SESSION['user'])!="")
 }
 include_once 'dbconnect.php';
 
+echo $_SESSION['user']."\n"."\n";
+
 if(isset($_POST['btn-signup']))
 {
 
@@ -13,7 +15,9 @@ if(isset($_POST['btn-signup']))
  $email = mysqli_real_escape_string($_POST['email']);
  $upass = md5(mysqli_real_escape_string($_POST['pass']));
 
-
+echo $uname."\n";
+echo $email."\n";
+echo $upass."\n";
 
  if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
