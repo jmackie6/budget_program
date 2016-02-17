@@ -23,7 +23,6 @@ echo $dbpassword;
 $db_name = constant("DB_NAME"); // Database name 
 echo $db_name;
 
-
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 ?>
