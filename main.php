@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'dbconnect.php';
+//include_once 'dbconnect.php';
 
 if(isset($_SESSION['user'])!="")
 {
@@ -13,10 +13,10 @@ if(isset($_POST['btn-login']))
  $res=mysqli_query("SELECT * FROM user WHERE email='$email'");
  $row=mysqli_fetch_array($res);
 
- 
- echo $_SESSION['user']."\n"."\n";
- echo $email."\n";
- echo $upass."\n";
+
+ echo $_SESSION['user'];
+ echo $email;
+ echo $upass;
 
  if($row['password']==md5($upass))
  {
