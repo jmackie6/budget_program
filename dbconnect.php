@@ -10,9 +10,11 @@ define('DB_NAME', getenv('OPENSHIFT_GEAR_NAME'));
 $dbhost = constant("DB_HOST"); // Host name 
 $dbport = constant("DB_PORT"); // Host port
 $dbusername = constant("DB_USER"); // Mysql username 
-$dbpassword = constant("DB_PASS"); // Mysql password 
-$db_name = constant("DB_NAME"); // Database name 
 
+$dbpassword = constant("DB_PASS"); // Mysql password 
+echo $dbpassword;
+$db_name = constant("DB_NAME"); // Database name 
+echo $db_name;
 
 
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
