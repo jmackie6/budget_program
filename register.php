@@ -19,6 +19,7 @@ echo $uname."\n";
 echo $email."\n";
 echo $upass."\n";
 
+
  if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>
