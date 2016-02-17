@@ -11,7 +11,6 @@ echo $_SESSION['user']."\n"."\n";
 if(isset($_POST['btn-signup']))
 {
 
-
  $uname = mysqli_real_escape_string($_POST['uname']);
  $email = mysqli_real_escape_string($_POST['email']);
  $upass = md5(mysqli_real_escape_string($_POST['pass']));

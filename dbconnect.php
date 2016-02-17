@@ -15,6 +15,7 @@ define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
 define('DB_NAME', getenv('OPENSHIFT_APP_NAME'));
 
 
+
 $dbhost = constant("DB_HOST"); // Host name 
 $dbport = constant("DB_PORT"); // Host port
 $dbusername = constant("DB_USER"); // Mysql username 
