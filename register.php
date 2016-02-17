@@ -38,7 +38,7 @@ $db_name = constant("DB_NAME"); // Database name
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-$sql = "INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"
+$sql = "INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')";
 
 if (mysql_query($sql) === TRUE) {
     echo "New record created successfully";
