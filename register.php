@@ -32,6 +32,7 @@ $dbusername = constant("DB_USER"); // Mysql username
 $dbpassword = constant("DB_PASS"); // Mysql password 
 //echo $dbpassword;
 $db_name = constant("DB_NAME"); // Database name 
+
 //echo $db_name;
 
 $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
