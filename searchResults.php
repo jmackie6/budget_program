@@ -45,7 +45,6 @@
 // // Database Connection String
 // $con = mysql_connect($db_hostname,$db_username,$db_password);
 
-
 session_start();
 include_once 'dbconnect.php';
 
@@ -53,20 +52,21 @@ if(!isset($_SESSION['user']))
 {
  header("Location: main.php");
 }
-$res=mysql_query("SELECT * FROM user WHERE user_id=".$_SESSION['user']);
+$res=mysql_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 
-mysql_select_db($db_database, $con);
+//mysql_select_db($db_database, $con);
+mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-        $term = mysql_real_escape_string($_REQUEST['search']);     
+        $term = mysql_real_escape_string($mysqlCon, $_REQUEST['search']);     
         
         $sql1 = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $term"; 
         
-        $r_query = mysql_query($sql1); 
+        $r_query = mysql_query($mysqlCon, $sql1); 
         
         while ($row = mysql_fetch_array($r_query)){   
-          echo '<br /> food: ' .$row['food'];  
-          echo '<br /> rent: '.$row['rent'];  
+          echo '<br /> food: ' . $row['food'];  
+          echo '<br /> rent: '. $row['rent'];  
           //echo '<br /> email: '.$row['email'];   
         }  
       ?>
