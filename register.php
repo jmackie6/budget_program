@@ -20,8 +20,6 @@ print_r($email);
 //echo ;
 echo $upass;
 
-
-
 if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>
