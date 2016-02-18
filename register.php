@@ -6,14 +6,14 @@ if(isset($_SESSION['user'])!="")
 }
 include_once 'dbconnect.php';
 
-echo $_SESSION['user']."\n"."\n";
+//echo $_SESSION['user']."\n"."\n";
 
 if(isset($_POST['btn-signup']))
 {
 
- $uname = mysql_real_escape_string($_POST['uname']);
- $email = mysql_real_escape_string($_POST['email']);
- $upass = md5(mysqli_real_escape_string($_POST['pass']));
+ $uname = mysql_real_escape_string($_REQUEST['uname']);
+ $email = mysql_real_escape_string($_REQUEST['email']);
+ $upass = md5(mysql_real_escape_string($_REQUEST['pass']));
 
 echo $uname;
 echo $email;
