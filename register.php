@@ -11,8 +11,8 @@ echo $_SESSION['user']."\n"."\n";
 if(isset($_POST['btn-signup']))
 {
 
- $uname = mysqli_real_escape_string($_POST['uname']);
- $email = mysqli_real_escape_string($_POST['email']);
+ $uname = mysql_real_escape_string($_POST['uname']);
+ $email = mysql_real_escape_string($_POST['email']);
  $upass = md5(mysqli_real_escape_string($_POST['pass']));
 
 echo $uname;
@@ -45,6 +45,7 @@ if (mysql_query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>";
 }
+
 }
 
  // if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
