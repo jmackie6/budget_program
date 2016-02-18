@@ -6,7 +6,7 @@ if(!isset($_SESSION['user']))
 {
  header("Location: main.php");
 }
-$res=mysqli_query("SELECT * FROM user WHERE user_id=".$_SESSION['user']);
+$res=mysqli_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 $userRow=mysqli_fetch_array($res);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
