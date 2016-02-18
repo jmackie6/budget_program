@@ -25,6 +25,8 @@
          }
          p.bottom
          {
+
+          
                font-size: 30px;
                
          }
