@@ -65,7 +65,7 @@ $userRow=mysqli_fetch_array($res);
                     <li class="menuitem">Budget Program Features                            
             
             <a  class="page2" href="seeBudget.php">                        
-                     <li class="menuitem">See Budget                            
+                     <li class="menuitem">Budget                            
             </a> 
             <a  class="page2" href="userFormBudget.php">                        
                      <li class="menuitem">New Month Budget                            
@@ -74,7 +74,7 @@ $userRow=mysqli_fetch_array($res);
                      <li class="menuitem">Update Budget                            
             </a>
             <a  class="page2" href="seeExpenses.php">                        
-                     <li class="menuitem">See Expenses                            
+                     <li class="menuitem">Expenses                            
             </a>
             <a  class="page2" href="userFormExpenses.php">                        
                      <li class="menuitem">New Month Expenses                            
@@ -83,7 +83,7 @@ $userRow=mysqli_fetch_array($res);
                      <li class="menuitem">Update Month Expenses                            
             </a>
             <a  class="page2" href="seeIncome.php">                        
-                     <li class="menuitem">See Income                            
+                     <li class="menuitem">Income                            
             </a>
             <a  class="page2" href="userFormIncome.php">                        
                      <li class="menuitem">New Month Income                            
@@ -92,10 +92,10 @@ $userRow=mysqli_fetch_array($res);
                      <li class="menuitem">Update Month Income                            
             </a>
             <a  class="page2" href="tithing.php">                        
-                     <li class="menuitem">See Tithing                            
+                     <li class="menuitem">Tithing                            
             </a> 
             <a  class="page2" href="search.php">                        
-                     <li class="menuitem"> Search Budget By Month                           
+                     <li class="menuitem"> Search By Month                           
             </a>                       
             
       </ul>
