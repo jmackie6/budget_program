@@ -17,7 +17,7 @@ if(isset($_POST['btn-signup']))
 
 echo $uname;
 echo $email;
-echo $upass;
+//echo $upass;
 
 // define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
 // define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
