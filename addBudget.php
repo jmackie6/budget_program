@@ -71,6 +71,7 @@ $userRow=mysql_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
+
         $b_food = mysql_real_escape_string($_REQUEST['b_food']);     
         $b_rent = mysql_real_escape_string($_REQUEST['b_rent']);  
         $b_health_insurance = mysql_real_escape_string($_REQUEST['b_health_insurance']);
@@ -78,8 +79,9 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $b_utilities = mysql_real_escape_string($_REQUEST['b_utilities']);
         $b_other = mysql_real_escape_string($_REQUEST['b_other']);
         $month = mysql_real_escape_string($_REQUEST['month']);
-        $sql = "INSERT INTO budget (user_id, b_food, b_rent, b_health_insurance, b_car_insurance, b_utilities, b_other, month)
+        $sql = "INSERT INTO budget (user_id, b_food, b_rent, b_health_insurance, b_car_insurance, b_utilities, b_other, month)       
 VALUES ('$userRow[user_id]', '$b_food','$b_rent','$b_health_insurance','$b_car_insurance', '$b_utilities', '$b_other', '$month')";
+
 
 if (mysql_query($sql) === TRUE) {
     echo "New record created successfully";
