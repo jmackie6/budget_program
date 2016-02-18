@@ -80,7 +80,7 @@ $userRow=mysqli_fetch_array($res);
                      <li class="menuitem">New Month Expenses                            
             </a>
             <a  class="page2" href="updateExpenses.php">                        
-                     <li class="menuitem">Update Month Expenses                            
+                     <li class="menuitem">Update Expenses                            
             </a>
             <a  class="page2" href="seeIncome.php">                        
                      <li class="menuitem">Income                            
@@ -89,7 +89,7 @@ $userRow=mysqli_fetch_array($res);
                      <li class="menuitem">New Month Income                            
             </a>
             <a  class="page2" href="updateIncome.php">                        
-                     <li class="menuitem">Update Month Income                            
+                     <li class="menuitem">Update Income                            
             </a>
             <a  class="page2" href="tithing.php">                        
                      <li class="menuitem">Tithing                            
