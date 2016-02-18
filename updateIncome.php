@@ -8,6 +8,7 @@
 <body>
 <center>
 <div id="login-form">
+  
 	<h1>Update Income
 <form method="post" action="updatedIncome.php">
 <table align="center" width="30%" border="0">

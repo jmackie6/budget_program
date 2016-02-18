@@ -8,6 +8,7 @@
 <body>
 <center>
 <div id="login-form">
+  
 	<h1>Expenses Spent In Month
 <form method="post" action="updatedExpenses.php">
 <table align="center" width="30%" border="0">
