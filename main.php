@@ -11,8 +11,8 @@ if(isset($_POST['btn-login']))
  $email = mysqli_real_escape_string($mysqlCon, $_POST['email']);
  $upass = mysqli_real_escape_string($mysqlCon, $_POST['pass']);
  $res=mysqli_query($mysqlCon, "SELECT * FROM user WHERE email='$email'");
- $row=mysqli_fetch_array($mysqlCon, $res);
- 
+ $row=mysqli_fetch_array($res);
+
  print_r($row);
 
  if($row['password']==md5($upass))
