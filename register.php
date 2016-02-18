@@ -16,27 +16,12 @@ if(isset($_POST['btn-signup']))
  $upass = md5(mysql_real_escape_string($_POST['pass']));
 
 echo $uname;
+echo "\n";
 echo $email;
-//echo $upass;
+echo "\n";
+echo $upass;
+echo "\n";
 
-// define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-// define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
-// define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-// define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-// define('DB_NAME', getenv('OPENSHIFT_APP_NAME'));
-
-// $dbhost = constant("DB_HOST"); // Host name 
-// $dbport = constant("DB_PORT"); // Host port
-// $dbusername = constant("DB_USER"); // Mysql username 
-
-// $dbpassword = constant("DB_PASS"); // Mysql password 
-// //echo $dbpassword;
-// $db_name = constant("DB_NAME"); // Database name 
-
-// //echo $db_name;
-
-// $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
-// mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
 if(mysql_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
@@ -53,9 +38,6 @@ if(mysql_query("INSERT INTO user(username,email,password) VALUES('$uname','$emai
 
 }
 
- // if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
- // {
- //  
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
