@@ -43,6 +43,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
  	
   $_SESSION['user'] = $row['user_id'];
   header("Location: home.php");
+  
  }
  else
  {

@@ -18,7 +18,7 @@ if(isset($_POST['btn-signup']))
 print_r($uname);
 print_r($email);
 //echo ;
-echo $upass;
+//echo $upass;
 
 if(mysqli_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
