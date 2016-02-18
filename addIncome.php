@@ -76,6 +76,8 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $sql = "INSERT INTO income (user_id, income, expenses, month)
 VALUES ('$userRow[user_id]', '$income', '$expenses', '$month')";
 
+
+
 if (mysql_query($sql) === TRUE) {
     echo "New record created successfully";
 } else {

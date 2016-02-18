@@ -86,7 +86,9 @@ VALUES ('$userRow[user_id]', '$b_food','$b_rent','$b_health_insurance','$b_car_i
 if (mysql_query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
+
     echo "Error: " . $sql . "<br>";
+    
 }
 
 ?>

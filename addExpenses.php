@@ -65,7 +65,6 @@ if(!isset($_SESSION['user']))
  header("Location: main.php");
 }
 
-
 $res=mysql_query("SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 
