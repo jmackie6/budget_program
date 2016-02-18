@@ -119,7 +119,7 @@ if (mysqli_query($mysqlCon, $sql6) === TRUE) {
 ?>
      </div>
    <ul id="menulist">
-          <a  class="page2" href="master.php">                        
+          <a  class="page2" href="home.php">                        
                      <li class="menuitem">Back To Homepage                           
             </a>
     </ul>

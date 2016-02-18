@@ -73,8 +73,8 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
 
         $income = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);     
         $month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);  
-        $sql = "INSERT INTO income (user_id, income, expenses, month)
-VALUES ('$userRow[user_id]', '$income', '$expenses', '$month')";
+        $sql = "INSERT INTO income (user_id, income, month)
+VALUES ('$userRow[user_id]', '$income', '$month')";
 
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "New record created successfully";
