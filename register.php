@@ -11,32 +11,32 @@ include_once 'dbconnect.php';
 if(isset($_POST['btn-signup']))
 {
 
- $uname = mysql_real_escape_string($_REQUEST['uname']);
- $email = mysql_real_escape_string($_REQUEST['email']);
- $upass = md5(mysql_real_escape_string($_REQUEST['pass']));
+ $uname = mysql_real_escape_string($_POST['username']);
+ $email = mysql_real_escape_string($_POST['email']);
+ $upass = md5(mysql_real_escape_string($_POST['pass']));
 
 echo $uname;
 echo $email;
 echo $upass;
 
-define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
-define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-define('DB_NAME', getenv('OPENSHIFT_APP_NAME'));
+// define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+// define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
+// define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+// define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+// define('DB_NAME', getenv('OPENSHIFT_APP_NAME'));
 
-$dbhost = constant("DB_HOST"); // Host name 
-$dbport = constant("DB_PORT"); // Host port
-$dbusername = constant("DB_USER"); // Mysql username 
+// $dbhost = constant("DB_HOST"); // Host name 
+// $dbport = constant("DB_PORT"); // Host port
+// $dbusername = constant("DB_USER"); // Mysql username 
 
-$dbpassword = constant("DB_PASS"); // Mysql password 
-//echo $dbpassword;
-$db_name = constant("DB_NAME"); // Database name 
+// $dbpassword = constant("DB_PASS"); // Mysql password 
+// //echo $dbpassword;
+// $db_name = constant("DB_NAME"); // Database name 
 
-//echo $db_name;
+// //echo $db_name;
 
-$mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
-mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
+// $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, $db_name, $dbport) or die("Error: " . mysqli_error($mysqlCon));
+// mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
 if(mysql_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
@@ -72,7 +72,7 @@ if(mysql_query("INSERT INTO user(username,email,password) VALUES('$uname','$emai
 <form method="post">
 <table align="center" width="30%" border="0">
 <tr>
-<td><input type="text" name="uname" placeholder="User Name" required /></td>
+<td><input type="text" name="username" placeholder="User Name" required /></td>
 </tr>
 <tr>
 <td><input type="email" name="email" placeholder="Your Email" required /></td>
