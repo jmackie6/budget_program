@@ -76,6 +76,7 @@ mysqlii_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon
 $income = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);     
 $month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);  
 $sql = "UPDATE income SET income = $income WHERE user_id = $userRow[user_id]"; 
+$sql2 = "UPDATE income SET month = $month WHERE user_id = $userRow[user_id]"; 
 
 
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
@@ -83,7 +84,11 @@ if (mysqli_query($mysqlCon, $sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>";
 }
-
+if (mysqli_query($mysqlCon, $sql2) === TRUE) {
+    echo "Update created successfully";
+} else {
+    echo "Error: " . $sql . "<br>";
+}
 ?>
      </div>
    <ul id="menulist">

@@ -84,6 +84,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $sql4 = "UPDATE budget SET  b_car_insurance = $b_car_insurance WHERE user_id = $userRow[user_id]";
         $sql5 = "UPDATE budget SET  b_utilities = $b_utilities WHERE user_id = $userRow[user_id]";
         $sql6 = "UPDATE budget SET  b_other = $b_other WHERE user_id = $userRow[user_id]";
+        $sql7 = "UPDATE budget SET  month = $month WHERE user_id = $userRow[user_id]";
         
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "Updated successfully";
@@ -111,6 +112,11 @@ if (mysqli_query($mysqlCon, $sql5) === TRUE) {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql6) === TRUE) {
+    echo "Updated successfully";
+} else {
+    echo "Error: " . $sql . "<br>";
+}
+if (mysqli_query($mysqlCon, $sql7) === TRUE) {
     echo "Updated successfully";
 } else {
     echo "Error: " . $sql . "<br>";
