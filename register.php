@@ -15,12 +15,12 @@ if(isset($_POST['btn-signup']))
  $email = mysql_real_escape_string($_POST['email']);
  $upass = md5(mysql_real_escape_string($_POST['pass']));
 
-echo $uname;
-echo "\n";
-echo $email;
-echo "\n";
+print_r($uname);
+print_r($email);
+//echo ;
+
 echo $upass;
-echo "\n";
+
 
 
 if(mysql_query("INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
