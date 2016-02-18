@@ -13,13 +13,6 @@ if(isset($_POST['btn-signup']))
  $email = mysqli_real_escape_string($mysqlCon, $_POST['email']);
  $upass = md5(mysqli_real_escape_string($mysqlCon, $_POST['pass']));
 
-
-
-echo $uname;
-print_r($email);
-echo $upass;
-
-
 if(mysqli_query($mysqlCon, "INSERT INTO user(username,email,password) VALUES('$uname','$email','$upass')"))
  {
   ?>

@@ -13,7 +13,6 @@ if(isset($_POST['btn-login']))
  $res=mysqli_query($mysqlCon, "SELECT * FROM user WHERE email='$email'");
  $row=mysqli_fetch_array($mysqlCon, $res);
 
-
  if($row['password']==md5($upass))
  {
  	
