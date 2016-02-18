@@ -12,6 +12,7 @@ if(isset($_POST['btn-signup']))
  $uname = mysqli_real_escape_string($mysqlCon, $_POST['username']);
  $email = mysqli_real_escape_string($mysqlCon, $_POST['email']);
  $upass = md5(mysqli_real_escape_string($mysqlCon, $_POST['pass']));
+ 
 
 print_r($uname);
 echo $uname;
