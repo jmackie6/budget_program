@@ -82,6 +82,7 @@ VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance
 
 
 
+
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "New record created successfully";
 } else {
