@@ -91,6 +91,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $sql5 = "UPDATE expenses SET  utilities = $utilities WHERE user_id = $userRow[user_id]";
         $sql6 = "UPDATE expenses SET  other = $other WHERE user_id = $userRow[user_id]";
         $sql7 = "UPDATE expenses SET  month = $month WHERE user_id = $userRow[user_id]";
+
         
 
         

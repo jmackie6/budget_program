@@ -77,6 +77,8 @@ $tithing = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);
 $sql = "INSERT INTO income (user_id, income, month)VALUES ('$userRow[user_id]', '$income', '$month')";
 $sql2 = "INSERT INTO tithing (user_id, tithing, month)VALUES ('$userRow[user_id]', '$tithing', '$month')";
 
+
+
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "New record created successfully";
 } else {

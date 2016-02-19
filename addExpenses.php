@@ -86,6 +86,7 @@ $sql2 = "INSERT INTO expenses (month) VALUES ('$month')";
 
 
 
+
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "New record created successfully";
 } else {
