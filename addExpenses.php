@@ -64,12 +64,8 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $utilities = mysqli_real_escape_string($mysqlCon, $_REQUEST['utilities']);
         $other = mysqli_real_escape_string($mysqlCon, $_REQUEST['other']);
         $month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);
-//         $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other, month)
-// VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other', '$month')";
-
- $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other)
-VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other')";
-$sql2 = "INSERT INTO expenses (month) VALUES ('$month')";
+        $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other, month)
+VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other', '$month')";
 
 
 // if (mysqli_query($mysqlCon, $sql) == TRUE && mysqli_query($mysqlCon, $sql2) == TRUE) {
@@ -95,11 +91,7 @@ if (mysqli_query($mysqlCon, $sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>";
 }
-if (mysqli_query($mysqlCon, $sql2) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>";
-}
+
 
 ?>
      </div>
