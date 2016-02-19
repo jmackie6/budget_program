@@ -49,8 +49,9 @@ if(!isset($_SESSION['user']))
 {
  header("Location: main.php");
 }
-$res=mysql_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
-$userRow=mysql_fetch_array($res);
+$res=mysqli_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
+$userRow=mysqli_fetch_array($res);
+echo $userRow['user_id'];
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
@@ -91,18 +92,18 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         else
         {
 
-          $sql1 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
+          $sql2 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
         
-          if (mysqli_query($mysqlCon, $sql) === TRUE) {
+          if (mysqli_query($mysqlCon, $sql2) === TRUE) {
             echo "New record created successfully";
-            $r_query = mysqli_query($mysqlCon, $sql); 
+            $r2_query = mysqli_query($mysqlCon, $sql2); 
         
             while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
               echo '<br /> Income: ' . $row['income'];  
           
             }  
           } else {
-            echo "Error: " . $sql . "<br>";
+            echo "Error: " . $sql2 . "<br>";
           }
           // $r_query = mysqli_query($mysqlCon, $sql1); 
           // while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
