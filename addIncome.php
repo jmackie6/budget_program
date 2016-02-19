@@ -71,12 +71,19 @@ $userRow=mysqli_fetch_array($res);
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
 
-        $income = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);     
-        $month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);  
-        $sql = "INSERT INTO income (user_id, income, month)
-VALUES ('$userRow[user_id]', '$income', '$month')";
+$income = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);     
+$month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);  
+$tithing = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']); 
+
+$sql = "INSERT INTO income (user_id, income, month)VALUES ('$userRow[user_id]', '$income', '$month')";
+$sql2 = "INSERT INTO tithing (user_id, tithing, month)VALUES ('$userRow[user_id]', '$tithing', '$month')";
 
 
+if (mysqli_query($mysqlCon, $sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>";
+}
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "New record created successfully";
 } else {
