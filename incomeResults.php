@@ -55,6 +55,7 @@ $userRow=mysql_fetch_array($res);
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
         $term = mysql_real_escape_string($mysqlCon, $_REQUEST['income']);     
+        echo $term;
 
         if ($term == "all")
         {
