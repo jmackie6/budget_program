@@ -70,7 +70,6 @@ $userRow=mysqli_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-
 $income = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);     
 $month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);  
 $tithing = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']); 
