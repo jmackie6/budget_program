@@ -85,7 +85,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         else
         {
 
-          $sql2 = "SELECT FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
+          $sql2 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
         
           if (mysqli_query($mysqlCon, $sql2) === TRUE) {
             echo "New record created successfully";
