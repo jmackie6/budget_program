@@ -96,28 +96,29 @@ $userRow=mysqli_fetch_array($res);
             </a> 
             <a  class="page2" href="search.php">                        
                      <li class="menuitem"> Search By Month                           
-            </a>                       
+            </a>   
+            <a  class="page2" href="overall.php">                        
+                     <li class="menuitem">Notifications                          
+            </a>                     
             
       </ul>
                 
     </div>
       <div id="main">
        <?php
+mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
+    
+        
+$sql1 = "SELECT * FROM expenses ORDER BY expenses_id DESC LIMIT 1 WHERE user_id = $userRow[user_id]"; 
+        
+$r_query = mysqli_query($mysqlCon, $sql1); 
+        
+while ($row = mysqli_fetch_array($r_query)){   
+          echo '<br /> food: ' . $row['food'];  
+          echo '<br /> rent: '. $row['rent'];  
+          echo '<br /> Car Insurance: '.$row['car_insurance'];   
+        }  
 
-// $connection = mysql_connect($host, $username, $password);
-// mysql_select_db($database);
-
-// $query = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; //You don't need a ; like you do in SQL
-// $result = mysql_query($query);
-
-
-
-// while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
-// echo "<h3>Your Income is: " . $row['income'] . "</h3>";  //$row['index'] the index here is a field name
-// }
-
-
-// mysql_close(); //Make sure to close out the database connection
 ?>
         
      </div>

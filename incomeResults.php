@@ -62,7 +62,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
       echo "error";
     }   
 
-        if ($term == "all")
+        if ($term === "all")
         {
           $sql = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; 
           // cursor = database.cursor()    
