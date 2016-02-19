@@ -42,20 +42,7 @@
        
 <?php
         
-// define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-// define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
-// define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-// define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-// define('DB_NAME', getenv('OPENSHIFT_GEAR_NAME'));
 
-// $dbhost = constant("DB_HOST"); // Host name 
-// $dbport = constant("DB_PORT"); // Host port
-// $dbusername = constant("DB_USER"); // Mysql username 
-// $dbpassword = constant("DB_PASS"); // Mysql password 
-// $db_name = constant("DB_NAME"); // Database name 
-
-// $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
-// mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
 session_start();
 include_once 'dbconnect.php';
@@ -77,15 +64,31 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $utilities = mysqli_real_escape_string($mysqlCon, $_REQUEST['utilities']);
         $other = mysqli_real_escape_string($mysqlCon, $_REQUEST['other']);
         $month = mysqli_real_escape_string($mysqlCon, $_REQUEST['month']);
-        $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other, month)
-VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other', '$month')";
+//         $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other, month)
+// VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other', '$month')";
 
  $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other)
 VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other')";
 $sql2 = "INSERT INTO expenses (month) VALUES ('$month')";
 
 
+// if (mysqli_query($mysqlCon, $sql) == TRUE && mysqli_query($mysqlCon, $sql2) == TRUE) {
+//     echo "Updated successfully";
 
+//     mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)); 
+        
+//         $expense = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $month"; 
+        
+//         $r_query = mysql_query($mysqlCon, $expense); 
+        
+//         while ($row = mysql_fetch_array($r_query)){   
+//           //echo '<br /> food: ' . $row['food'];  
+//           //echo '<br /> rent: '. $row['rent'];  
+//           //echo '<br /> email: '.$row['email'];   
+//         }  
+// } else {
+//     echo "Error: " . $sql . "<br>";
+// }
 
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
     echo "New record created successfully";

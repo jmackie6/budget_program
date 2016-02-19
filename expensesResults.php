@@ -33,7 +33,7 @@
   </head>
   <body>
      <div id="top">
-       <p class="mainTitle">Income</P> 
+       <p class="mainTitle">Expenses</P> 
        
         
      </div>
@@ -54,40 +54,46 @@ $userRow=mysql_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-    $term = mysql_real_escape_string($mysqlCon, $_REQUEST['income']);   
-    if (mysql_real_escape_string($mysqlCon, $_REQUEST['income'])) {
-      echo $term;
-    } 
-    else{
-      echo "error";
-    }   
+        $term = mysql_real_escape_string($mysqlCon, $_REQUEST['expense']);     
 
-        if ($term === "all")
+        if ($term == "all")
         {
-          $sql = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; 
+          $sql = "SELECT * FROM expenses WHERE user_id = $userRow[user_id]"; 
           // cursor = database.cursor()    
           // cursor.execute("SELECT user_id FROM round WHERE state == -1 AND state = 2")  
           // for round in cursor:
           // if round[0] != 5
           // do stuff
         
-            $r_query = mysql_query($mysqlCon, $sql1); 
+          $r_query = mysql_query($mysqlCon, $sql1); 
         
-            while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
-              echo '<br /> Income: ' . $row['income'];  
+          while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
+            echo '<br /> Month: '. $row['month'];
+            echo '<br /> food: ' . $row['food'];  
+            echo '<br /> rent: '. $row['rent'];  
+            echo '<br /> Health Insurance: '.$row['health_insurance'];  
+            echo '<br /> Car Insurance: '.$row['car_insurance']; 
+            echo '<br /> Utilities: '. $row['utilities'];
+            echo '<br /> other: '. $row['other'];
+          }  
           
-            }  
         }
         else
         {
 
 
-          $sql1 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
+          $sql1 = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $term"; 
         
           $r_query = mysql_query($mysqlCon, $sql1); 
         
           while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
-            echo '<br /> Income: ' . $row['income'];  
+            echo '<br /> Month: '. $row['month'];
+            echo '<br /> food: ' . $row['food'];  
+            echo '<br /> rent: '. $row['rent'];  
+            echo '<br /> Health Insurance: '.$row['health_insurance'];  
+            echo '<br /> Car Insurance: '.$row['car_insurance']; 
+            echo '<br /> Utilities: '. $row['utilities'];
+            echo '<br /> other: '. $row['other'];
           }  
         }
       ?>
