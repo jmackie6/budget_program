@@ -70,24 +70,44 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
           // for round in cursor:
           // if round[0] != 5
           // do stuff
-        
-            $r_query = mysqli_query($mysqlCon, $sql1); 
+          if (mysqli_query($mysqlCon, $sql) === TRUE) {
+            echo "New record created successfully";
+            $r_query = mysqli_query($mysqlCon, $sql); 
         
             while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
               echo '<br /> Income: ' . $row['income'];  
           
             }  
+          } else {
+            echo "Error: " . $sql . "<br>";
+          }
+            // $r_query = mysqli_query($mysqlCon, $sql); 
+        
+            // while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
+            //   echo '<br /> Income: ' . $row['income'];  
+          
+            // }  
         }
         else
         {
 
           $sql1 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
         
-          $r_query = mysqli_query($mysqlCon, $sql1); 
+          if (mysqli_query($mysqlCon, $sql) === TRUE) {
+            echo "New record created successfully";
+            $r_query = mysqli_query($mysqlCon, $sql); 
         
-          while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
-            echo '<br /> Income: ' . $row['income'];  
-          }  
+            while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
+              echo '<br /> Income: ' . $row['income'];  
+          
+            }  
+          } else {
+            echo "Error: " . $sql . "<br>";
+          }
+          // $r_query = mysqli_query($mysqlCon, $sql1); 
+          // while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
+          //   echo '<br /> Income: ' . $row['income'];  
+          // }  
         }
       ?>
      </div>
