@@ -54,7 +54,7 @@ $userRow=mysql_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-        $term = mysql_real_escape_string($mysqlCon, $_REQUEST['expense']);     
+        $term = mysqli_real_escape_string($mysqlCon, $_REQUEST['expense']);     
 
         if ($term == "all")
         {
@@ -65,9 +65,9 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
           // if round[0] != 5
           // do stuff
         
-          $r_query = mysql_query($mysqlCon, $sql1); 
+          $r_query = mysqli_query($mysqlCon, $sql1); 
         
-          while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
+          while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
             echo '<br /> Month: '. $row['month'];
             echo '<br /> food: ' . $row['food'];  
             echo '<br /> rent: '. $row['rent'];  
@@ -84,9 +84,9 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
 
           $sql1 = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $term"; 
         
-          $r_query = mysql_query($mysqlCon, $sql1); 
+          $r_query = mysqli_query($mysqlCon, $sql1); 
         
-          while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
+          while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
             echo '<br /> Month: '. $row['month'];
             echo '<br /> food: ' . $row['food'];  
             echo '<br /> rent: '. $row['rent'];  

@@ -54,15 +54,15 @@ $userRow=mysql_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-    $term = mysql_real_escape_string($mysqlCon, $_REQUEST['income']);   
-    if (mysql_real_escape_string($mysqlCon, $_REQUEST['income'])) {
+    $term = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);   
+    if (mysqli_real_escape_string($mysqlCon, $_REQUEST['income'])) {
       echo $term;
     } 
     else{
       echo "error";
     }   
 
-        if ($term === "all")
+        if ($term == "all")
         {
           $sql = "SELECT * FROM income WHERE user_id = $userRow[user_id]"; 
           // cursor = database.cursor()    
@@ -71,9 +71,9 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
           // if round[0] != 5
           // do stuff
         
-            $r_query = mysql_query($mysqlCon, $sql1); 
+            $r_query = mysqli_query($mysqlCon, $sql1); 
         
-            while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
+            while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
               echo '<br /> Income: ' . $row['income'];  
           
             }  
@@ -81,12 +81,11 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         else
         {
 
-
           $sql1 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
         
-          $r_query = mysql_query($mysqlCon, $sql1); 
+          $r_query = mysqli_query($mysqlCon, $sql1); 
         
-          while ($row = mysql_fetch_array($mysqlCon, $r_query)){   
+          while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
             echo '<br /> Income: ' . $row['income'];  
           }  
         }
