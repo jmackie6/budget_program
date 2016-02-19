@@ -51,17 +51,10 @@ if(!isset($_SESSION['user']))
 }
 $res=mysqli_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 $userRow=mysqli_fetch_array($res);
-echo $userRow['user_id'];
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
     $term = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);   
-    if (mysqli_real_escape_string($mysqlCon, $_REQUEST['income'])) {
-      echo $term;
-    } 
-    else{
-      echo "error";
-    }   
 
         if ($term === "all")
         {
@@ -78,7 +71,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
             while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
               echo '<br /> Income: ' . $row['income'];  
           
-            }  
+            } 
           } else {
             echo "Error: " . $sql . "<br>";
           }
@@ -92,7 +85,7 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         else
         {
 
-          $sql2 = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
+          $sql2 = "SELECT FROM income WHERE user_id = $userRow[user_id] AND month = $term"; 
         
           if (mysqli_query($mysqlCon, $sql2) === TRUE) {
             echo "New record created successfully";
