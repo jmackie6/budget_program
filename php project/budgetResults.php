@@ -54,47 +54,66 @@ $userRow=mysql_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
-        $term = mysqli_real_escape_string($mysqlCon, $_REQUEST['budget']);     
+define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
-        if ($term == "all")
-        {
-          $sql = "SELECT * FROM budget WHERE user_id = $userRow[user_id]"; 
-          // cursor = database.cursor()    
-          // cursor.execute("SELECT user_id FROM round WHERE state == -1 AND state = 2")  
-          // for round in cursor:
-          // if round[0] != 5
-          // do stuff
-        
-          $r_query = mysqli_query($mysqlCon, $sql1); 
-        
-          while ($row = mysqli_fetch_array($mysqlCon, $r_query)){   
-            echo '<br /> Month: '. $row['month'];
-            echo '<br /> food: ' . $row['b_food'];  
-            echo '<br /> rent: '. $row['b_rent'];  
-            echo '<br /> Health Insurance: '.$row['b_health_insurance'];  
-            echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
-            echo '<br /> Utilities: '. $row['b_utilities'];
-            echo '<br /> other: '. $row['b_other'];
-          }  
-        }
-        else
-        {
+$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+$dbh = new PDO($dsn, DB_USER, DB_PASS);
 
+$term = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);
 
-          $sql1 = "SELECT * FROM budget WHERE user_id = $userRow[user_id] AND month = $term"; 
-        
-          $r_query = mysqli_query($mysqlCon, $sql1); 
-        
-          while ($row = mysqli_fetch_array($mysqlCon, $r_query)){  
-            echo '<br /> Month: '. $row['month'];
-            echo '<br /> food: ' . $row['b_food'];  
-            echo '<br /> rent: '. $row['b_rent'];  
-            echo '<br /> Health Insurance: '.$row['b_health_insurance'];  
-            echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
-            echo '<br /> Utilities: '. $row['b_utilities'];
-            echo '<br /> other: '. $row['b_other']; 
-          }  
-        }
+$result = $dbh->prepare("SELECT * FROM budget WHERE user_id = $userRow[user_id]");
+    $result->execute();
+
+  while ($row = $result->fetch(PDO::FETCH_ASSOC))
+  {
+      echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+      echo '<br /> Food: ' . $row['b_food'];
+      echo '<br /> rent: '. $row['b_rent'];  
+      echo '<br /> Health Insurance: '.$row['b_health_insurance'];  
+      echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
+      echo '<br /> Utilities: '. $row['b_utilities'];
+      echo '<br /> other: '. $row['b_other'];
+  }
+
+// if ($term == "all")
+// {
+
+//     $result = $dbh->prepare("SELECT * FROM budget WHERE user_id = $userRow[user_id]");
+//     $result->execute();
+
+//   while ($row = $result->fetch(PDO::FETCH_ASSOC))
+//   {
+//       echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+//       echo '<br /> Food: ' . $row['b_food'];
+//       echo '<br /> rent: '. $row['b_rent'];  
+//       echo '<br /> Health Insurance: '.$row['b_health_insurance'];  
+//       echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
+//       echo '<br /> Utilities: '. $row['b_utilities'];
+//       echo '<br /> other: '. $row['b_other'];
+//   }
+            
+// }
+// else
+// {
+//     $result = $dbh->prepare("SELECT * FROM budget WHERE user_id = $userRow[user_id] AND month = '$term'");
+//     $result->execute();
+
+//     while ($row = $result->fetch(PDO::FETCH_ASSOC))
+//     {
+//             echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+//             echo '<br /> Food: ' . $row['b_food'];
+//             echo '<br /> rent: '. $row['b_rent'];  
+//             echo '<br /> Health Insurance: '.$row['b_health_insurance'];  
+//             echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
+//             echo '<br /> Utilities: '. $row['b_utilities'];
+//             echo '<br /> other: '. $row['b_other'];
+            
+//     }
+// }
       ?>
      </div>
    <ul id="menulist">

@@ -62,31 +62,31 @@ $tithing = mysqli_real_escape_string($mysqlCon, $_REQUEST['income']);
 $sql = "INSERT INTO income (user_id, income, month)VALUES ('$userRow[user_id]', '$income', '$month')";
 $sql2 = "INSERT INTO tithing (user_id, tithing, month)VALUES ('$userRow[user_id]', '$tithing', '$month')";
 
-// if (mysqli_query($mysqlCon, $sql) == TRUE && mysqli_query($mysqlCon, $sql2) == TRUE) {
-//     echo "Updated successfully";
-
-//     mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)); 
-        
-//         $income = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $month"; 
-        
-//         $r_query = mysql_query($mysqlCon, $income); 
-        
-//         while ($row = mysql_fetch_array($r_query)){   
-//           //echo '<br /> food: ' . $row['food'];  
-//           //echo '<br /> rent: '. $row['rent'];  
-//           //echo '<br /> email: '.$row['email'];   
-//         }  
-// } else {
-//     echo "Error: " . $sql . "<br>";
-// }
-
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
-    echo "New record created successfully";
+  echo "<h2>You have added an income to the month of ". $month . "</h2>";
+    define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+$dbh = new PDO($dsn, DB_USER, DB_PASS);
+
+$result = $dbh->prepare("SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = '$month'");
+    $result->execute();
+
+    while ($row = $result->fetch(PDO::FETCH_ASSOC))
+    {
+            echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+            echo '<br /> Income: ' . $row['income'];
+            
+    }
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql2) === TRUE) {
-    echo "New record created successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }

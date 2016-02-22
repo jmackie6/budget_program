@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Search database</title>
+<title>Budget</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
 <center>
 <div id="login-form">
-<form method="post" action="searchResults.php">
+<form method="post" action="tithingResults.php">
 <table align="center" width="30%" border="0">
 <tr>
-<td><select name ="search" id="search">
+<td><select name ="tithing" id="tithing">
+  <option value="all">All Tithings</option>
   <option value="january">January</option>
   <option value="feburary">Feburary</option>
   <option value="march">March</option>
@@ -31,12 +32,9 @@
 </tr>
 </form>
 </div>
-
 </center>
+
 
 
     </body>
 </html>
-<?php  
-
-  

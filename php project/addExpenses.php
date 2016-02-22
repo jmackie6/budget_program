@@ -67,27 +67,31 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $sql = "INSERT INTO expenses (user_id, food, rent, health_insurance, car_insurance, utilities, other, month)
 VALUES ('$userRow[user_id]', '$food','$rent','$health_insurance','$car_insurance', '$utilities', '$other', '$month')";
 
-
-// if (mysqli_query($mysqlCon, $sql) == TRUE && mysqli_query($mysqlCon, $sql2) == TRUE) {
-//     echo "Updated successfully";
-
-//     mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)); 
-        
-//         $expense = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $month"; 
-        
-//         $r_query = mysql_query($mysqlCon, $expense); 
-        
-//         while ($row = mysql_fetch_array($r_query)){   
-//           //echo '<br /> food: ' . $row['food'];  
-//           //echo '<br /> rent: '. $row['rent'];  
-//           //echo '<br /> email: '.$row['email'];   
-//         }  
-// } else {
-//     echo "Error: " . $sql . "<br>";
-// }
-
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
-    echo "New record created successfully";
+    echo "<h2>You have added these expenses to ". $month . "</h2>";
+    define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+
+$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+$dbh = new PDO($dsn, DB_USER, DB_PASS);
+
+$result = $dbh->prepare("SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = '$month'");
+    $result->execute();
+
+    while ($row = $result->fetch(PDO::FETCH_ASSOC))
+    {
+            echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+            echo '<br /> Food: ' . $row['food'];
+            echo '<br /> rent: '. $row['rent'];  
+            echo '<br /> Health Insurance: '.$row['health_insurance'];  
+            echo '<br /> Car Insurance: '.$row['car_insurance']; 
+            echo '<br /> Utilities: '. $row['utilities'];
+            echo '<br /> other: '. $row['other'];
+            
+    }
 } else {
     echo "Error: " . $sql . "<br>";
 }
