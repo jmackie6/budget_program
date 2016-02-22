@@ -97,7 +97,7 @@ $userRow=mysqli_fetch_array($res);
             <a  class="page2" href="search.php">                        
                      <li class="menuitem"> Search By Month                           
             </a>   
-            <a  class="page2" href="overall.php">                        
+            <a  class="page2" href="overallResults.php">                        
                      <li class="menuitem">Notifications                          
             </a>                     
             

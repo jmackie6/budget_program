@@ -33,7 +33,7 @@
   </head>
   <body>
      <div id="top">
-       <p class="mainTitle">Search Results</P> 
+       <p class="mainTitle">Search</P> 
        
         
      </div>
@@ -49,8 +49,8 @@ if(!isset($_SESSION['user']))
 {
  header("Location: main.php");
 }
-$res=mysql_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
-$userRow=mysql_fetch_array($res);
+$res=mysqli_query($mysqlCon, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
+$userRow=mysqli_fetch_array($res);
 
 mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
@@ -63,51 +63,61 @@ define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 $dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
 $dbh = new PDO($dsn, DB_USER, DB_PASS);
 
-$term = mysql_real_escape_string($mysqlCon, $_REQUEST['search']);    
+$term = mysqli_real_escape_string($mysqlCon, $_REQUEST['search']);
 
-
-        
-$result = $dbh->prepare("SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = '$term'");
-$result->execute();
-
-          echo '<br /><h3> Month: ' . $term.'</h3>';
+ 
+          $result = $dbh->prepare("SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = '$term'");
+          $result->execute();
 
           while ($row = $result->fetch(PDO::FETCH_ASSOC))
           {
-            echo '<h4> Income </h4>';
+            echo '<br /><h2> Month: ' . $row['month'].'</h2>';
+            echo '<br /><h3> Income </h3>';
             echo '<br /> Income: ' . $row['income'];
           }
 
-// $result2 = $dbh->prepare("SELECT * FROM expeses WHERE user_id = $userRow[user_id] AND month = '$term'");
-// $result2->execute();
+          $result = $dbh->prepare("SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = '$term'");
+          $result->execute();
 
-//           while ($row2 = $result2->fetch(PDO::FETCH_ASSOC))
-//           {
-//             echo '<h4> Expenses </h4>';
-//             echo '<br /> Food: ' . $row2['food'];
-//             echo '<br /> rent: '. $row2['rent'];  
-//             echo '<br /> Health Insurance: '.$row2['health_insurance'];  
-//             echo '<br /> Car Insurance: '.$row2['car_insurance']; 
-//             echo '<br /> Utilities: '. $row2['utilities'];
-//             echo '<br /> other: '. $row2['other'];
-//           }
+          while ($row = $result->fetch(PDO::FETCH_ASSOC))
+          {
+            echo '<br /><h3> Expenses </h3>';
+            echo '<br /> Food: ' . $row['food'];
+            echo '<br /> rent: '. $row['rent'];  
+            echo '<br /> Health Insurance: '.$row['health_insurance'];  
+            echo '<br /> Car Insurance: '.$row['car_insurance']; 
+            echo '<br /> Utilities: '. $row['utilities'];
+            echo '<br /> other: '. $row['other'];
 
-// $result = $dbh->prepare("SELECT * FROM budget WHERE user_id = $userRow[user_id] AND month = '$term'");
-// $result->execute();
+          }
 
-//           while ($row = $result->fetch(PDO::FETCH_ASSOC))
-//           {
-//             echo '<h4> budget </h4>';
-//             echo '<br /><h3> Month: ' . $row['month'].'</h3>';
-//             echo '<br /> Food: ' . $row['b_food'];
-//             echo '<br /> rent: '. $row['b_rent'];  
-//             echo '<br /> Health Insurance: '.$row['b_health_insurance'];  
-//             echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
-//             echo '<br /> Utilities: '. $row['b_utilities'];
-//             echo '<br /> other: '. $row['b_other'];
-//           }
+          $result = $dbh->prepare("SELECT * FROM budget WHERE user_id = $userRow[user_id] AND month = '$term'");
+          $result->execute();
 
-      ?>
+          while ($row = $result->fetch(PDO::FETCH_ASSOC))
+          {
+             echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+             echo '<br /> Food: ' . $row['b_food'];
+             echo '<br /> rent: '. $row['b_rent'];  
+             echo '<br /> Health Insurance: '.$row['b_health_insurance']; 
+             echo '<br /> Car Insurance: '.$row['b_car_insurance']; 
+             echo '<br /> Utilities: '. $row['b_utilities'];
+             echo '<br /> other: '. $row['b_other']; 
+            
+          }
+
+          $result = $dbh->prepare("SELECT * FROM tithing WHERE user_id = $userRow[user_id] AND month = '$term'");
+          $result->execute();
+
+          while ($row = $result->fetch(PDO::FETCH_ASSOC))
+          {
+            echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+            echo '<br /> Tithing: ' . intval($row['tithing'])/10;
+          }
+
+
+        
+?>
      </div>
    <ul id="menulist">
           <a  class="page2" href="home.php">                        
@@ -116,4 +126,5 @@ $result->execute();
     </ul>
   </body>
 </html>  
+
  

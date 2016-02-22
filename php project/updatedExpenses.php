@@ -44,22 +44,31 @@
        
 <?php
         
-// define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-// define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
-// define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-// define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-// define('DB_NAME', getenv('OPENSHIFT_GEAR_NAME'));
 
-// $dbhost = constant("DB_HOST"); // Host name 
-// $dbport = constant("DB_PORT"); // Host port
-// $dbusername = constant("DB_USER"); // Mysql username 
-// $dbpassword = constant("DB_PASS"); // Mysql password 
-// $db_name = constant("DB_NAME"); // Database name 
+// echo "<h2>You have changed these expenses in the month of ". $month . "</h2>";
+//     define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+// define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+// define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+// define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+// define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
 
+// $dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+// $dbh = new PDO($dsn, DB_USER, DB_PASS);
 
-// $mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
-// mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
+// $result = $dbh->prepare("SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = '$month'");
+//     $result->execute();
 
+//     while ($row = $result->fetch(PDO::FETCH_ASSOC))
+//     {
+//             echo '<br /><h3> Month: ' . $row['month'].'</h3>';
+//             echo '<br /> Food: ' . $row['food'];
+//             echo '<br /> rent: '. $row['rent'];  
+//             echo '<br /> Health Insurance: '.$row['health_insurance'];  
+//             echo '<br /> Car Insurance: '.$row['car_insurance']; 
+//             echo '<br /> Utilities: '. $row['utilities'];
+//             echo '<br /> other: '. $row['other'];
+            
+//     }
 
 session_start();
 include_once 'dbconnect.php';
@@ -93,59 +102,41 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
         $sql7 = "UPDATE expenses SET  month = $month WHERE user_id = $userRow[user_id]";
 
 
-// if (mysqli_query($mysqlCon, $sql) == TRUE && mysqli_query($mysqlCon, $sql2) == TRUE && mysqli_query($mysqlCon, $sql3) == TRUE && mysqli_query($mysqlCon, $sql4) == TRUE && mysqli_query($mysqlCon, $sql5) == TRUE && mysqli_query($mysqlCon, $sql6) == TRUE) {
-//     echo "Updated successfully";
 
-//     mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
-
-//         $term = mysql_real_escape_string($mysqlCon, $_REQUEST['search']);     
-        
-//         $sql1 = "SELECT * FROM expenses WHERE user_id = $userRow[user_id] AND month = $term"; 
-        
-//         $r_query = mysql_query($mysqlCon, $sql1); 
-        
-//         while ($row = mysql_fetch_array($r_query)){   
-//           //echo '<br /> food: ' . $row['food'];  
-//           //echo '<br /> rent: '. $row['rent'];  
-//           //echo '<br /> email: '.$row['email'];   
-//         }  
-// } else {
-//     echo "Error: " . $sql . "<br>";
-// }
 
 
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
-    echo "Updated successfully";
+    echo "<h2>You have updated your expenses</h2>";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql2) === TRUE) {
-    echo "Updated successfully";
+     echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql3) === TRUE) {
-    echo "Updated successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql4) === TRUE) {
-    echo "Updated successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql5) === TRUE) {
-    echo "Updated successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql6) === TRUE) {
-    echo "Updated successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql7) === TRUE) {
-    echo "Updated successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }

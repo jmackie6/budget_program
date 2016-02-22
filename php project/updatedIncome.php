@@ -48,6 +48,7 @@ include_once 'dbconnect.php';
 if(!isset($_SESSION['user']))
 {
  header("Location: main.php");
+
 }
 
 
@@ -67,31 +68,13 @@ $sql = "UPDATE income SET income = $income WHERE user_id = $userRow[user_id]";
 $sql2 = "UPDATE tithing SET tithing = $tithing WHERE user_id = $userRow[user_id]"; 
 
 
-// if (mysqli_query($mysqlCon, $sql) == TRUE && mysqli_query($mysqlCon, $sql2) == TRUE) {
-//     echo "Updated successfully";
-
-//     mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)); 
-        
-//         $income = "SELECT * FROM income WHERE user_id = $userRow[user_id] AND month = $month"; 
-        
-//         $r_query = mysql_query($mysqlCon, $income); 
-        
-//         while ($row = mysql_fetch_array($r_query)){   
-//           //echo '<br /> food: ' . $row['food'];  
-//           //echo '<br /> rent: '. $row['rent'];  
-//           //echo '<br /> email: '.$row['email'];   
-//         }  
-// } else {
-//     echo "Error: " . $sql . "<br>";
-// }
-
 if (mysqli_query($mysqlCon, $sql) === TRUE) {
-    echo "Update created successfully";
+    echo "<h2>You have updated you Income</h2>";
 } else {
     echo "Error: " . $sql . "<br>";
 }
 if (mysqli_query($mysqlCon, $sql2) === TRUE) {
-    echo "Update created successfully";
+    echo "";
 } else {
     echo "Error: " . $sql . "<br>";
 }
